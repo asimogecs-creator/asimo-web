@@ -1,0 +1,70 @@
+{
+  "events": [
+    {
+      "id": "nexus-2024",
+      "title": "NEXUS",
+      "description": "The ultimate tech convergence where innovation meets excellence. A flagship event showcasing cutting-edge technology and engineering prowess.",
+      "date": "2024-10-15",
+      "featured": true,
+      "priority": 1,
+      "icon": "fas fa-network-wired",
+      "category": "Tech Fest",
+      "status": "upcoming"
+    },
+    {
+      "id": "sci-fari-2024",
+      "title": "SCI-FARI",
+      "description": "Science Safari expedition exploring the frontiers of scientific discovery and technological advancement through interactive workshops and exhibitions.",
+      "date": "2024-09-20",
+      "featured": true,
+      "priority": 2,
+      "icon": "fas fa-microscope",
+      "category": "Science Fair",
+      "status": "upcoming"
+    },
+    {
+      "id": "jashn-e-aazadi",
+      "title": "JASHN-E-AAZADI",
+      "description": "Celebrating India's independence with patriotic fervor, showcasing technological achievements and innovations that make our nation proud.",
+      "date": "2024-08-15",
+      "featured": true,
+      "priority": 3,
+      "icon": "fas fa-flag",
+      "category": "Cultural",
+      "status": "completed"
+    },
+    {
+      "id": "sih-2024",
+      "title": "SIH",
+      "description": "Smart India Hackathon - 36 hours of intensive coding and innovation to solve real-world problems and create impactful solutions.",
+      "date": "2024-12-05",
+      "featured": true,
+      "priority": 4,
+      "icon": "fas fa-code",
+      "category": "Hackathon",
+      "status": "upcoming"
+    },
+    {
+      "id": "jashn-e-gantantra",
+      "title": "JASHN-E-GANTANTRA",
+      "description": "Republic Day celebration highlighting democratic values and showcasing student innovations that contribute to nation building.",
+      "date": "2025-01-26",
+      "featured": true,
+      "priority": 5,
+      "icon": "fas fa-landmark",
+      "category": "Cultural",
+      "status": "upcoming"
+    },
+    {
+      "id": "kascade-2024",
+      "title": "KASCADE",
+      "description": "Knowledge and Skills Cascade - A comprehensive skill development program featuring workshops, seminars, and hands-on training sessions.",
+      "date": "2024-11-10",
+      "featured": true,
+      "priority": 6,
+      "icon": "fas fa-graduation-cap",
+      "category": "Workshop",
+      "status": "upcoming"
+    }
+  ]
+}

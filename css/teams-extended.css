@@ -1,0 +1,854 @@
+/* Teams Extended Page Styles */
+
+/* Light Mode ("Aura Light") - Sophisticated Teal Theme */
+body.light-theme {
+    background: #F8F9FA;
+}
+
+body.light-theme .teams-header {
+    background: linear-gradient(135deg, rgba(56, 161, 105, 0.1), rgba(56, 161, 105, 0.05));
+    color: #1A202C;
+}
+
+body.light-theme .member-card {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(56, 161, 105, 0.4);
+    color: #1A202C;
+}
+
+body.light-theme .member-name {
+    color: #1A202C;
+}
+
+body.light-theme .member-role {
+    color: #38A169;
+}
+
+body.light-theme .social-links a {
+    color: #5A6472;
+}
+
+body.light-theme .social-links a:hover {
+    color: #38A169;
+    background: rgba(56, 161, 105, 0.1);
+}
+
+body.light-theme .batch-title {
+    color: #1A202C;
+}
+
+body.light-theme .batch-description {
+    color: #5A6472;
+}
+
+body.light-theme .progress-bar {
+    background: rgba(56, 161, 105, 0.2);
+    border: 1px solid rgba(56, 161, 105, 0.3);
+}
+
+body.light-theme .progress-light {
+    background: linear-gradient(90deg, transparent, #38A169, transparent);
+    box-shadow: 0 0 20px #38A169;
+}
+
+body.light-theme .nav-dot {
+    background: rgba(56, 161, 105, 0.2);
+    border: 1px solid rgba(56, 161, 105, 0.4);
+}
+
+body.light-theme .nav-dot.active {
+    background: #38A169;
+    color: white;
+}
+
+/* Dark Mode ("Slate Green") - Deep Calming Slate Theme */
+body.dark-theme,
+body:not(.light-theme) {
+    background: linear-gradient(180deg, #1E2A2B 0%, #151E1F 100%);
+}
+
+body.dark-theme .teams-header,
+body:not(.light-theme) .teams-header {
+    background: linear-gradient(135deg, rgba(30, 42, 43, 0.3), rgba(21, 30, 31, 0.2));
+    color: #E8EDED;
+}
+
+body.dark-theme .member-card,
+body:not(.light-theme) .member-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    color: #BCC8C9;
+    box-shadow: inset 0 0 20px rgba(232, 237, 237, 0.1);
+}
+
+body.dark-theme .member-card:hover,
+body:not(.light-theme) .member-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.7);
+    box-shadow: 
+        inset 0 0 20px rgba(232, 237, 237, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .member-name,
+body:not(.light-theme) .member-name {
+    color: #E8EDED;
+}
+
+body.dark-theme .member-role,
+body:not(.light-theme) .member-role {
+    color: #BCC8C9;
+}
+
+body.dark-theme .social-links a,
+body:not(.light-theme) .social-links a {
+    color: #BCC8C9;
+}
+
+body.dark-theme .social-links a:hover,
+body:not(.light-theme) .social-links a:hover {
+    color: #E8EDED;
+    background: rgba(30, 42, 43, 0.3);
+}
+
+body.dark-theme .batch-title,
+body:not(.light-theme) .batch-title {
+    color: #E8EDED;
+}
+
+body.dark-theme .batch-description,
+body:not(.light-theme) .batch-description {
+    color: #BCC8C9;
+}
+
+body.dark-theme .progress-bar,
+body:not(.light-theme) .progress-bar {
+    background: rgba(30, 42, 43, 0.4);
+    border: 1px solid rgba(232, 237, 237, 0.2);
+}
+
+body.dark-theme .progress-light,
+body:not(.light-theme) .progress-light {
+    background: linear-gradient(90deg, transparent, #E8EDED, transparent);
+    box-shadow: 0 0 20px rgba(232, 237, 237, 0.5);
+}
+
+body.dark-theme .nav-dot,
+body:not(.light-theme) .nav-dot {
+    background: rgba(30, 42, 43, 0.6);
+    border: 1px solid rgba(232, 237, 237, 0.2);
+    color: #BCC8C9;
+}
+
+body.dark-theme .nav-dot.active,
+body:not(.light-theme) .nav-dot.active {
+    background: rgba(232, 237, 237, 0.9);
+    color: #1E2A2B;
+}
+
+/* Common Styles */
+.teams-header {
+    padding: 120px 0 60px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 4px;
+    height: 60vh;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Batch Navigation */
+.batch-navigation {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-dot:hover {
+    transform: scale(1.1);
+}
+
+.batch-year {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Batch Sections */
+.batch-section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.batch-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.batch-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.batch-description {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Members Grid */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Member Cards */
+.member-card {
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    aspect-ratio: 3/4; /* Portrait rectangle ratio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* GPU acceleration for ultra-fast rendering */
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.member-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.member-card:nth-child(3n) {
+    transform: rotate(-1deg);
+}
+
+.member-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.member-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: auto;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.member-role {
+    font-size: 1rem;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 1.2;
+    opacity: 0.9;
+}
+
+/* Hide removed elements */
+.member-bio,
+.member-actions {
+    display: none;
+}
+
+.connect-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Light mode connect button */
+body.light-theme .connect-btn {
+    background: rgba(56, 161, 105, 0.1);
+    color: #38A169;
+    border: 1px solid rgba(56, 161, 105, 0.3);
+}
+
+body.light-theme .connect-btn:hover {
+    background: #38A169;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 161, 105, 0.3);
+}
+
+/* Dark mode connect button */
+body.dark-theme .connect-btn,
+body:not(.light-theme) .connect-btn {
+    background: rgba(30, 42, 43, 0.3);
+    color: #E8EDED;
+    border: 1px solid rgba(232, 237, 237, 0.2);
+}
+
+body.dark-theme .connect-btn:hover,
+body:not(.light-theme) .connect-btn:hover {
+    background: rgba(232, 237, 237, 0.9);
+    color: #1E2A2B;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(232, 237, 237, 0.2);
+}
+
+/* Social Modal */
+.social-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.social-modal-content {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+    width: 90%;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.social-modal.active .social-modal-content {
+    transform: scale(1);
+}
+
+/* Light mode modal */
+body.light-theme .social-modal-content {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(56, 161, 105, 0.3);
+    color: #1A202C;
+}
+
+/* Dark mode modal */
+body.dark-theme .social-modal-content,
+body:not(.light-theme) .social-modal-content {
+    background: rgba(30, 42, 43, 0.9);
+    border: 1px solid rgba(232, 237, 237, 0.2);
+    color: #BCC8C9;
+}
+
+.social-modal-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.social-modal-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    margin-left: auto;
+}
+
+.close-modal:hover {
+    opacity: 1;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Light mode social links */
+body.light-theme .social-link-item {
+    background: rgba(56, 161, 105, 0.1);
+    color: #38A169;
+    border: 1px solid rgba(56, 161, 105, 0.2);
+}
+
+body.light-theme .social-link-item:hover {
+    background: rgba(56, 161, 105, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Dark mode social links */
+body.dark-theme .social-link-item,
+body:not(.light-theme) .social-link-item {
+    background: rgba(30, 42, 43, 0.3);
+    color: #E8EDED;
+    border: 1px solid rgba(232, 237, 237, 0.2);
+}
+
+body.dark-theme .social-link-item:hover,
+body:not(.light-theme) .social-link-item:hover {
+    background: rgba(30, 42, 43, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Specific social platform colors */
+.social-link-item.linkedin:hover {
+    background: #0077b5 !important;
+    color: white !important;
+}
+
+.social-link-item.github:hover {
+    background: #333 !important;
+    color: white !important;
+}
+
+.social-link-item.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%) !important;
+    color: white !important;
+}
+
+.social-link-item.twitter:hover {
+    background: #1da1f2 !important;
+    color: white !important;
+}
+
+.social-link-item.email:hover {
+    background: #ea4335 !important;
+    color: white !important;
+}
+
+.social-link-item i {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Avatar styles update */
+.member-avatar .initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Back Navigation */
+.back-nav {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+/* Loading Animation */
+.content-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    opacity: 0.6;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error and No Members States */
+.error-message,
+.no-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0.7;
+    min-height: 200px;
+}
+
+.error-message i,
+.no-members i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.error-message p,
+.no-members p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Theme-specific error states */
+body.light-theme .error-message,
+body.light-theme .no-members {
+    color: #5A6472;
+}
+
+body.light-theme .error-message i,
+body.light-theme .no-members i {
+    color: #38A169;
+}
+
+body.dark-theme .error-message,
+body.dark-theme .no-members,
+body:not(.light-theme) .error-message,
+body:not(.light-theme) .no-members {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark-theme .error-message i,
+body.dark-theme .no-members i,
+body:not(.light-theme) .error-message i,
+body:not(.light-theme) .no-members i {
+    color: #E8EDED;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .progress-bar-container {
+        left: 10px;
+        height: 40vh;
+        width: 3px;
+    }
+    
+    .batch-navigation {
+        right: 15px;
+        gap: 15px;
+    }
+    
+    .nav-dot {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .batch-year {
+        font-size: 0.7rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 20px;
+        line-height: 1.2;
+    }
+    
+    .batch-title {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+    
+    .members-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 cards per row on mobile */
+        gap: 15px;
+        padding: 0 15px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .member-card {
+        padding: 20px 15px;
+        aspect-ratio: 3/4; /* Portrait ratio */
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 180px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .member-avatar {
+        width: 110px;
+        height: 110px;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .back-nav {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .back-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Social modal responsive */
+    .social-modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+    
+    .social-links-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .social-link-item {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .teams-header {
+        padding: 100px 0 40px;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 0 15px;
+        line-height: 1.3;
+    }
+    
+    .page-subtitle {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .batch-section {
+        padding: 50px 0;
+    }
+    
+    .batch-title {
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 0 15px;
+        margin-bottom: 25px;
+    }
+    
+    .members-grid {
+        grid-template-columns: 1fr 1fr; /* Keep 2 columns */
+        gap: 12px;
+        padding: 0 12px;
+    }
+    
+    .member-card {
+        padding: 15px 10px;
+        margin: 0;
+        aspect-ratio: 3/4;
+        max-width: 160px;
+        font-size: 0.9rem;
+    }
+    
+    .member-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .member-name {
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .member-role {
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+    
+    .connect-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .social-modal-content {
+        width: 98%;
+        padding: 20px;
+    }
+    
+    .social-modal-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .social-link-item {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

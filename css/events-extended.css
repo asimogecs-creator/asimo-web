@@ -1,0 +1,344 @@
+/* Events Extended Page Styles */
+
+/* Page Background with Theme Support */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme - White background with specified card color */
+body.light-theme .events-extended-section {
+    background: #ffffff !important;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+}
+
+body.light-theme .events-extended-header h1 {
+    color: #000000 !important;
+}
+
+body.light-theme .events-extended-title {
+    color: #000000 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    text-shadow: none !important;
+}
+
+body.light-theme .events-extended-subtitle {
+    color: #6b7280 !important;
+}
+
+body.light-theme .event-card {
+    background: #EFF5F2 !important;
+    border: 1px solid rgba(34, 197, 94, 0.2) !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme .event-card:hover {
+    background: #EFF5F2 !important;
+    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.15) !important;
+}
+
+body.light-theme .filter-tab {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #1f2937 !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+body.light-theme .filter-tab.active {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: #059669 !important;
+    border-color: #059669 !important;
+}
+
+/* Additional light theme styles for event elements */
+body.light-theme .event-title {
+    color: #1f2937 !important;
+}
+
+body.light-theme .event-description {
+    color: #6b7280 !important;
+}
+
+body.light-theme .event-icon {
+    color: #059669 !important;
+}
+
+body.light-theme .event-date {
+    color: #059669 !important;
+}
+
+/* Dark Theme - Same as main page */
+body:not(.light-theme) .events-extended-section,
+.events-extended-section {
+    background: #0D0D10;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+/* Add the same background effects as main page */
+body:not(.light-theme) .events-extended-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(78, 205, 196, 0.05) 0%, transparent 50%);
+    z-index: -1;
+    animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -20px) rotate(1deg); }
+    50% { transform: translate(-10px, 20px) rotate(-1deg); }
+    75% { transform: translate(-20px, -10px) rotate(0.5deg); }
+}
+
+.events-extended-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.events-extended-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.events-extended-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* Filter Tabs */
+.events-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 0.75rem 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.filter-tab:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+.filter-tab.active {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.5);
+    color: #10b981;
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+}
+
+/* Events Grid */
+.events-extended-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Event Cards - Default Dark Theme (same as main page) */
+.event-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-light);
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(34, 197, 94, 0.8) 0%,
+        rgba(16, 185, 129, 0.8) 50%,
+        rgba(5, 150, 105, 0.8) 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+}
+
+.event-icon {
+    font-size: 2.5rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.event-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-heading);
+}
+
+.event-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #10b981;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Status Badge in Right Corner */
+.event-status-corner {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.event-status-corner.upcoming {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.event-status-corner.completed {
+    background: rgba(107, 114, 128, 0.2);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.event-status-corner.featured {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .events-extended-title {
+        font-size: 2.5rem;
+    }
+    
+    .events-extended-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .event-card {
+        padding: 1.5rem;
+    }
+    
+    .events-filter-tabs {
+        gap: 0.5rem;
+    }
+    
+    .filter-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-extended-section {
+        padding: 2rem 1rem;
+    }
+    
+    .events-extended-title {
+        font-size: 2rem;
+    }
+    
+    .events-filter-tabs {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+}
+
+/* Loading Animation */
+.content-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+    color: #d1d5db;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #10b981;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,32 @@
+{
+  "workshops": [
+    {
+      "id": "arduino-basics",
+      "title": "Arduino Programming",
+      "description": "Learn microcontroller programming and IoT fundamentals",
+      "icon": "fas fa-microchip",
+      "featured": true
+    },
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "description": "Full-stack web development using modern frameworks",
+      "icon": "fas fa-code",
+      "featured": true
+    },
+    {
+      "id": "video-editing",
+      "title": "Video Editing",
+      "description": "Professional video editing and motion graphics",
+      "icon": "fas fa-video",
+      "featured": true
+    },
+    {
+      "id": "github-collaboration",
+      "title": "GitHub",
+      "description": "Version control and collaborative development workflows",
+      "icon": "fab fa-github",
+      "featured": true
+    }
+  ]
+}

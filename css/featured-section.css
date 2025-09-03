@@ -1,0 +1,502 @@
+/* Featured Section Styles */
+.featured-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95), rgba(25, 25, 35, 0.9));
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+}
+
+.featured-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Section Title */
+.featured-section .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.featured-section .section-title h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.featured-section .section-title p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Tube Light Effect for Featured Section */
+.featured-tubelight-bar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        rgba(0, 123, 255, 0.3) 20%,
+        rgba(0, 212, 255, 0.8) 50%,
+        rgba(0, 123, 255, 0.3) 80%,
+        transparent 100%
+    );
+    border-radius: 2px;
+    box-shadow: 
+        0 0 10px rgba(0, 60, 150, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    transition: all 0.15s ease;
+}
+
+.featured-tubelight-bar.glow {
+    box-shadow: 
+        0 0 20px rgba(0, 123, 255, 0.6),
+        0 0 40px rgba(0, 212, 255, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    animation: tubelightFlicker 0.1s infinite alternate;
+}
+
+/* Banner Container */
+.featured-banners-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    user-select: none; /* Prevent text selection during swipe */
+    -webkit-user-select: none;
+}
+
+.featured-banners-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    touch-action: pan-y; /* Allow vertical scrolling but handle horizontal ourselves */
+}
+
+/* Infinite scroll support */
+.featured-banners-container.no-transition {
+    transition: none !important;
+}
+
+/* Individual Banner */
+.featured-banner {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.1);
+    transition: transform 0.6s ease;
+}
+
+.featured-banner.active .banner-background {
+    transform: scale(1);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    backdrop-filter: blur(1px);
+}
+
+/* Banner Content */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.banner-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-banner.active .banner-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.banner-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* Banner Button */
+.banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.15s ease;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.banner-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.banner-btn i {
+    transition: transform 0.15s ease;
+}
+
+.banner-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Tube Light Effect on Banner */
+.banner-tubelight-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.featured-banner:hover .banner-tubelight-effect {
+    left: 100%;
+}
+
+/* Navigation Controls */
+.banner-navigation {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.banner-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    backdrop-filter: blur(10px);
+}
+
+.banner-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Banner Indicators */
+.banner-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.banner-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 2px solid transparent;
+}
+
+.banner-indicator.active {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.banner-indicator:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+}
+
+/* ===============================
+   LIGHT THEME STYLES
+   =============================== */
+
+/* Featured Section Light Theme */
+body.light-theme .featured-section {
+    background: linear-gradient(135deg, 
+        rgba(240, 248, 255, 0.95) 0%,     /* Very light blue */
+        rgba(248, 250, 255, 0.9) 50%,     /* Light grayish blue */
+        rgba(255, 255, 255, 1) 100%       /* Pure white */
+    );
+}
+
+body.light-theme .featured-section::before {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.08) 0%, transparent 50%);
+}
+
+/* Section Title Light Theme */
+body.light-theme .featured-section .section-title h2 {
+    background: linear-gradient(135deg, #1e40af, #059669, #dc2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .featured-section .section-title p {
+    color: rgba(55, 65, 81, 0.8);
+}
+
+/* Banner Container Light Theme */
+body.light-theme .featured-banners-wrapper {
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Banner Content Light Theme */
+body.light-theme .banner-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+}
+
+body.light-theme .banner-title {
+    color: #000000;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+body.light-theme .banner-subtitle {
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+}
+
+body.light-theme .banner-description {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Banner Button Light Theme */
+body.light-theme .banner-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    backdrop-filter: blur(15px);
+}
+
+body.light-theme .banner-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation Controls Light Theme */
+body.light-theme .banner-nav-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    backdrop-filter: blur(15px);
+}
+
+body.light-theme .banner-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Banner Indicators Light Theme */
+body.light-theme .banner-indicator {
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .banner-indicator.active {
+    background: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme .banner-indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Tube Light Effect Light Theme */
+body.light-theme .banner-tubelight-effect {
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.15), transparent);
+}
+
+body.light-theme .featured-banner:hover .banner-tubelight-effect {
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.25), transparent);
+}
+
+/* Loading State Light Theme */
+body.light-theme .content-loading {
+    color: rgba(55, 65, 81, 0.7);
+}
+
+body.light-theme .loading-spinner {
+    border-color: rgba(59, 130, 246, 0.1);
+    border-top-color: #3b82f6;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-section {
+        padding: 60px 0;
+    }
+    
+    .featured-section .section-title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .featured-banners-wrapper {
+        height: 400px;
+        margin: 0 10px;
+    }
+    
+    .banner-content {
+        padding: 40px 30px;
+    }
+    
+    .banner-title {
+        font-size: 2.2rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .banner-description {
+        font-size: 1rem;
+    }
+    
+    .banner-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .banner-navigation {
+        bottom: 20px;
+        gap: 15px;
+    }
+    
+    .banner-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-banners-wrapper {
+        height: 350px;
+    }
+    
+    .banner-content {
+        padding: 30px 20px;
+    }
+    
+    .banner-title {
+        font-size: 1.8rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+    
+    .banner-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+}

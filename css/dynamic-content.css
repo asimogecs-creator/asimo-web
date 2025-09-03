@@ -1,0 +1,130 @@
+/* Dynamic Content Styles - Preserves all existing animations and spacing */
+
+/* View All Events Button */
+.view-all-events {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 10; /* Ensure button is above timeline */
+}
+
+.btn-view-all {
+    font-family: 'Rajdhani', sans-serif;
+    padding: 15px 40px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 0.07s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.btn-view-all .btn-text {
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease;
+}
+
+.btn-view-all .waterfill-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(108, 161, 245, 0.9) 0%, 
+        rgba(27, 48, 105, 0.935) 100%
+    );
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.btn-view-all:hover .waterfill-effect {
+    left: 0;
+}
+
+.btn-view-all:hover .btn-text {
+    color: #ffffff;
+}
+
+.btn-view-all:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Event Categories */
+.event-category {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Loading States */
+.content-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+    z-index: 2; /* Ensure loading content doesn't hide timeline-line */
+}
+
+/* Ensure timeline line is visible during loading */
+.events-timeline .content-loading {
+    background: transparent; /* Make sure background doesn't block timeline */
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 15px;
+}
+
+/* Error States */
+.content-error {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Rajdhani', sans-serif;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Preserve all existing animations and transitions */
+.dynamic-content {
+    /* Inherit all parent animations */
+    animation: inherit;
+    transition: inherit;
+}
+
+/* Ensure AOS animations work with dynamic content */
+[data-aos] {
+    pointer-events: none;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}

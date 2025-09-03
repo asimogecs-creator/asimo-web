@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Club - GEC Samastipur</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/advanced-graphics.css">
+    <link rel="stylesheet" href="css/dynamic-content.css">
+    <link rel="stylesheet" href="css/theme-system.css">
+    <link rel="stylesheet" href="css/featured-section.css">
+    <link rel="stylesheet" href="css/featured-new.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattanakarn:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-sun theme-toggle-icon" id="theme-icon"></i>
+        <span id="theme-text">Light</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+        <div class="nav-container-desktop">
+            <div class="nav-glass-inner">
+                <div class="nav-menu-desktop">
+                    <div class="nav-item">
+                        <a href="#home" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#featured" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Featured</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#events" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#workshops" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Workshops</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#gallery" class="nav-link">
+                            <i class="fas fa-images"></i>
+                            <span>Gallery</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#teams" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                    <!-- Notification Button -->
+                    <div class="nav-item nav-notification">
+                        <a href="notifications.html" class="nav-link notification-btn" id="desktop-notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="notification-badge" id="desktop-notification-badge"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-menu">
+            <a href="#home" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <!-- Mobile Notification Button - 2nd position -->
+            <a href="notifications.html" class="mobile-nav-link notification-btn" id="mobile-notification-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+                <span class="notification-badge" id="mobile-notification-badge"></span>
+            </a>
+            <a href="#featured" class="mobile-nav-link">
+                <i class="fas fa-star"></i>
+                <span>Featured</span>
+            </a>
+            <a href="#events" class="mobile-nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Events</span>
+            </a>
+            <a href="#workshops" class="mobile-nav-link">
+                <i class="fas fa-tools"></i>
+                <span>Workshops</span>
+            </a>
+            <a href="#gallery" class="mobile-nav-link">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#teams" class="mobile-nav-link">
+                <i class="fas fa-users"></i>
+                <span>Teams</span>
+            </a>
+            <a href="#contact" class="mobile-nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="mobile-hamburger" id="mobile-hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero advanced-hero">
+        <!-- Club Logo in left corner -->
+        <div class="hero-club-logo">
+            <img src="assets/logos/club-logo.png" alt="ASIMO Technical Club" class="hero-logo-img">
+        </div>
+        
+        <div class="hero-background-advanced">
+            <!-- Clean Background -->
+            <div class="cosmic-background"></div>
+        </div>
+        
+        <div class="hero-content-advanced">
+            <div class="glass-container hero-glass-advanced">
+                <div class="hero-title-advanced">
+                    
+                    <div class="title-line-2">
+                        <span class="main-title gradient-text-advanced">ASIMO</span>
+                    </div>
+                    <div class="title-line-3">
+                        <span class="subtitle-title">THE TECHNICAL CLUB</span>
+                    </div>
+                    <div class="title-line-4">
+                        <span class="college-name-hero">Government Engineering College, Samastipur</span>
+                    </div>
+                </div>
+                <div class="hero-subtitle-advanced">
+                    <span class="subtitle-main">Advance step in MultiTech orientation</span>
+                    <span class="subtitle-secondary">Innovating Tomorrow, Today</span>
+                </div>
+                <div class="hero-buttons-advanced">
+                    <button class="btn-explore-timeline" onclick="scrollToTimeline()">
+                        <span class="btn-text">Explore Timeline</span>
+                        <div class="waterfill-effect"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured-section">
+        <div class="section-tube-light" data-section="featured"></div>
+        <div class="section-dark-overlay" data-section="featured"></div>
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Featured</h2>
+                <p>Discover our latest highlights and exciting announcements</p>
+            </div>
+            
+            <div class="featured-banners-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="featured-banners-container" id="featured-banners-container">
+                    <!-- Banners will be loaded dynamically -->
+                    <div class="content-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading featured content...</span>
+                    </div>
+                </div>
+                
+                <!-- Navigation Controls -->
+                <div class="banner-navigation">
+                    <div class="banner-nav-btn banner-nav-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="banner-indicators" id="banner-indicators">
+                        <!-- Indicators will be generated dynamically -->
+                    </div>
+                    <div class="banner-nav-btn banner-nav-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="section-tube-light" data-section="events"></div>
+        <div class="section-dark-overlay" data-section="events"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Events</h2>
+                <div class="section-subtitle">Celebrating Innovation and Excellence</div>
+            </div>
+            
+            <div class="events-timeline">
+                <div class="timeline-line"></div>
+                
+                <!-- Events will be loaded dynamically - preserving spacing and animations -->
+                <div class="content-loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading events...</span>
+                </div>
+            </div>
+            
+            <div class="events-actions">
+                <a href="events.html" class="view-more-btn">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section id="workshops" class="workshops-section">
+        <div class="section-tube-light" data-section="workshops"></div>
+        <div class="section-dark-overlay" data-section="workshops"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Workshops</h2>
+                <div class="section-subtitle">Hands-on Learning Experience</div>
+            </div>
+            
+            <div class="workshops-grid workshops-container">
+                <!-- Workshops will be loaded dynamically -->
+                <div class="content-loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading workshops...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-tube-light" data-section="gallery"></div>
+        <div class="section-dark-overlay" data-section="gallery"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Gallery</h2>
+                <div class="section-subtitle">Moments of Innovation</div>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery items will be loaded dynamically -->
+                <div class="content-loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading gallery...</span>
+                </div>
+            </div>
+            <div class="gallery-actions">
+                <a href="gallery.html" class="view-more-btn">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="teams-section">
+        <div class="section-tube-light" data-section="teams"></div>
+        <div class="section-dark-overlay" data-section="teams"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Our Team</h2>
+                <div class="section-subtitle">Meet the Innovators</div>
+            </div>
+            
+            <div class="team-layout">
+                <!-- Batch Selection Cards -->
+                <div class="batch-grid">
+                    <!-- Batch cards will be loaded dynamically -->
+                    <div class="content-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading batches...</span>
+                    </div>
+                </div>
+
+                <!-- Quotes Carousel -->
+                <div class="quotes-carousel glass-container" data-aos="fade-left" data-aos-delay="300">
+                    <!-- Quotes will be loaded dynamically -->
+                    <div class="content-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading quotes...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-tube-light" data-section="contact"></div>
+        <div class="section-dark-overlay" data-section="contact"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Get In Touch</h2>
+                <div class="section-subtitle">Connect with us</div>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info glass-container" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address</strong>
+                            <p>Government Engineering College<br>Samastipur, Bihar, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>asimo@gecsamastipur@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>+91 XXXXX XXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-share-alt"></i>
+                        <div>
+                            <strong>Follow Us</strong>
+                            <div class="contact-social-links">
+                                <a href="https://www.instagram.com/asimo_gecsamastipur?utm_source=ig_web_button_share_sheet&igsh=MXZ1MjBmM2pucjh1cQ==" target="_blank" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/asimo-gecsamastipur/posts/?feedView=all" target="_blank" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://x.com/asimo_gecsmp" target="_blank" title="X (Twitter)">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://whatsapp.com/channel/0029VaTvSK3545v2dqAzyw0c" target="_blank" title="WhatsApp Channel">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.facebook.com/asimo.gecsamastipur" target="_blank" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form glass-container" data-aos="fade-left">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary glow-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GEC Tech Club</h3>
+                    <p>Innovating Tomorrow, Today</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asimo_gecsamastipur?utm_source=ig_web_button_share_sheet&igsh=MXZ1MjBmM2pucjh1cQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/asimo_gecsmp" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/asimo-gecsamastipur/posts/?feedView=all" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#workshops">Workshops</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>GEC Samastipur</p>
+                    <p>Bihar, India</p>
+                    <p>https://www.asimogecs.com/</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>@asimo.All right reserve</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Dynamic Content Modules -->
+    <script src="js/modules/events-manager.js"></script>
+    <script src="js/modules/workshops-manager.js"></script>
+    <script src="js/modules/teams-manager.js"></script>
+    <script src="js/modules/gallery-manager.js"></script>
+    <script src="js/modules/featured-manager.js"></script>
+    <script src="js/modules/featured-manager-new.js"></script>
+    <script src="js/modules/notification-manager.js"></script>
+    <script src="js/modules/content-manager.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

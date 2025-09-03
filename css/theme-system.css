@@ -1,0 +1,671 @@
+/* Theme System - Dark/Light Mode Toggle */
+
+/* Dark Theme Variables (Default) */
+:root {
+    /* Dark Theme Colors */
+    --primary-color: #ffffff;
+    --secondary-color: #126995;
+    --accent-color: #115eb0;
+    --bg-dark: #0D0D10;
+    --bg-darker: #050505;
+    --text-light: #E0E0E0;
+    --text-gray: #E0E0E0;
+    --text-heading: #FFFFFF;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Navigation */
+    --nav-bg: rgba(10, 10, 10, 0.8);
+    --nav-text: #E0E0E0;
+    --nav-hover: #ffffff;
+    
+    /* Section-specific backgrounds */
+    --home-bg: radial-gradient(ellipse at top, #111A2E, #0D0D10);
+    --events-bg: radial-gradient(ellipse at top, rgba(8, 217, 214, 0.15), #0D0D10 70%);
+    --workshops-bg: radial-gradient(ellipse at top, rgba(138, 43, 226, 0.15), #0D0D10 70%);
+    --gallery-bg: radial-gradient(ellipse at top, rgba(255, 0, 255, 0.15), #0D0D10 70%);
+    --teams-bg: radial-gradient(ellipse at top, rgba(255, 215, 0, 0.15), #0D0D10 70%);
+    --contact-bg: radial-gradient(ellipse at top, rgba(0, 255, 127, 0.15), #0D0D10 70%);
+    
+    /* Section borders */
+    --home-border: rgba(0, 123, 255, 0.2);
+    --events-border: rgba(8, 217, 214, 0.25);
+    --workshops-border: rgba(138, 43, 226, 0.25);
+    --gallery-border: rgba(255, 0, 255, 0.25);
+    --teams-border: rgba(255, 215, 0, 0.25);
+    --contact-border: rgba(0, 255, 127, 0.25);
+}
+
+/* Light Theme Variables */
+body.light-theme {
+    /* Light Theme Colors */
+    --primary-color: #007BFF;
+    --secondary-color: #5A6472;
+    --accent-color: #007BFF;
+    --bg-dark: #F8F9FA;
+    --bg-darker: #F8F9FA;
+    --text-light: #1A202C;
+    --text-gray: #5A6472;
+    --text-heading: #1A202C;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    
+    /* Navigation */
+    --nav-bg: rgba(0, 51, 102, 0.9);
+    --nav-text: #ffffff;
+    --nav-hover: #ffffff;
+    
+    /* Section-specific backgrounds with auras */
+    --home-bg: #F8F9FA;
+    --events-bg: linear-gradient(180deg, rgba(72, 187, 120, 0.1) 0%, #F8F9FA 30%);
+    --workshops-bg: linear-gradient(180deg, rgba(237, 137, 54, 0.1) 0%, #F8F9FA 30%);
+    --gallery-bg: linear-gradient(180deg, rgba(128, 90, 213, 0.1) 0%, #F8F9FA 30%);
+    --teams-bg: linear-gradient(180deg, rgba(0, 123, 255, 0.1) 0%, #F8F9FA 30%);
+    --contact-bg: linear-gradient(180deg, rgba(72, 187, 120, 0.1) 0%, #F8F9FA 30%);
+    
+    /* Section borders */
+    --home-border: #007BFF;
+    --events-border: #48BB78;
+    --workshops-border: #ED8936;
+    --gallery-border: #805AD5;
+    --teams-border: #007BFF;
+    --contact-border: #48BB78;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Logo Dynamic Switching */
+.hero-logo-img {
+    transition: opacity 0.3s ease;
+}
+
+/* Default logo (dark theme) */
+.hero-logo-img {
+    content: url('../assets/logos/club-logo.png');
+}
+
+/* Light theme logo */
+body.light-theme .hero-logo-img {
+    content: url('../assets/logos/light-background.png');
+}
+
+/* Base body styles for theme switching */
+body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+/* Navigation Theme Styles */
+/* Dark Mode Two-Layer Floating Glass Navbar (Default) */
+/* Top Layer (Main Navigation Container) */
+.desktop-nav .nav-container-desktop {
+    background: rgba(20, 20, 25, 0.45) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(0, 123, 255, 0.2) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 123, 255, 0.1) !important;
+}
+
+/* Bottom Layer (Inner Glass Container) */
+.nav-glass-inner {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Dark Mode Navigation Text Colors */
+.nav-menu-desktop .nav-link {
+    color: #FFFFFF !important;
+}
+
+.nav-menu-desktop .nav-link:hover {
+    color: #007BFF !important;
+}
+
+/* Active Link Styling for Dark Mode */
+.nav-menu-desktop .nav-link.active {
+    color: #FFFFFF !important;
+    background: rgba(0, 123, 255, 0.2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Enhanced hover effects for dark mode */
+.nav-container-desktop:hover {
+    background: rgba(20, 20, 25, 0.6) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 123, 255, 0.15) !important;
+}
+
+.nav-glass-inner:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.mobile-nav {
+    background: var(--nav-bg) !important;
+}
+
+.nav-link {
+    color: var(--nav-text) !important;
+}
+
+.nav-link:hover {
+    color: var(--nav-hover) !important;
+}
+
+/* Light Mode Two-Layer Floating Glass Navbar */
+/* Top Layer (Main Navigation Container) */
+body.light-theme .nav-container-desktop {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* Bottom Layer (Inner Glass Container) */
+body.light-theme .nav-glass-inner {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.15) !important;
+}
+
+/* Light Mode Navigation Text Colors */
+body.light-theme .nav-menu-desktop .nav-link {
+    color: #1A202C !important;
+}
+
+body.light-theme .nav-menu-desktop .nav-link:hover {
+    color: #007BFF !important;
+}
+
+/* Active Link Styling for Light Mode */
+body.light-theme .nav-menu-desktop .nav-link.active {
+    color: #007BFF !important;
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Enhanced hover effects for light mode */
+body.light-theme .nav-container-desktop:hover {
+    background: rgba(255, 255, 255, 0.55) !important;
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15) !important;
+}
+
+body.light-theme .nav-glass-inner:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.2) !important;
+}
+
+/* Mobile Navigation Styles for Light Theme */
+body.light-theme .mobile-nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.08) !important;
+    /* Preserve essential mobile nav functionality */
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 280px !important;
+    height: 100vh !important;
+    z-index: 1001 !important;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.light-theme .mobile-nav.active {
+    right: 0 !important;
+}
+
+body.light-theme .mobile-nav-overlay {
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    /* Inherit positioning from dark theme overlay */
+}
+
+body.light-theme .mobile-nav-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+body.light-theme .mobile-nav-link {
+    color: #1A202C !important;
+}
+
+body.light-theme .mobile-nav-link:hover,
+body.light-theme .mobile-nav-link.active {
+    color: #007BFF !important;
+    background: rgba(0, 123, 255, 0.1) !important;
+}
+
+/* Mobile Navigation Styles for Dark Theme (Default) */
+.mobile-nav {
+    background: rgba(20, 20, 25, 0.85) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-left: 1px solid rgba(0, 123, 255, 0.2) !important;
+    /* Preserve essential mobile nav functionality */
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 280px !important;
+    height: 100vh !important;
+    z-index: 1001 !important;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mobile-nav.active {
+    right: 0 !important;
+}
+
+.mobile-nav-overlay {
+    background: rgba(20, 20, 25, 0.3) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    /* Preserve essential overlay functionality */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1000 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.mobile-nav-link {
+    color: #FFFFFF !important;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    color: #007BFF !important;
+    background: rgba(0, 123, 255, 0.2) !important;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Hamburger Menu Button Styling */
+.hamburger span,
+.mobile-hamburger .hamburger-line {
+    background: #FFFFFF !important;
+}
+
+/* Light Mode Mobile Hamburger Button - White with Bluish Ring and Glass Effect */
+body.light-theme .mobile-hamburger {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 2px solid rgba(0, 123, 255, 0.4) !important;
+    box-shadow: 
+        0 4px 16px rgba(0, 123, 255, 0.2),
+        0 0 0 4px rgba(0, 123, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+body.light-theme .mobile-hamburger:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 123, 255, 0.6) !important;
+    box-shadow: 
+        0 6px 20px rgba(0, 123, 255, 0.3),
+        0 0 0 6px rgba(0, 123, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    transform: translateY(-2px) !important;
+}
+
+body.light-theme .hamburger span,
+body.light-theme .mobile-hamburger .hamburger-line {
+    background: #FFFFFF !important;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Navigation close button for mobile */
+.nav-close {
+    color: #FFFFFF !important;
+}
+
+body.light-theme .nav-close {
+    color: #1A202C !important;
+}
+
+/* Mobile hamburger positioning */
+.mobile-hamburger {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+}
+
+/* Section Backgrounds */
+#home {
+    background: var(--home-bg) !important;
+}
+
+#events {
+    background: var(--events-bg) !important;
+}
+
+#workshops {
+    background: var(--workshops-bg) !important;
+}
+
+#gallery {
+    background: var(--gallery-bg) !important;
+}
+
+#teams {
+    background: var(--teams-bg) !important;
+}
+
+#contact {
+    background: var(--contact-bg) !important;
+}
+
+/* Glass Box Borders */
+#home .glass-box {
+    border: 1px solid var(--home-border) !important;
+}
+
+#events .glass-box {
+    border: 1px solid var(--events-border) !important;
+}
+
+#workshops .glass-box {
+    border: 1px solid var(--workshops-border) !important;
+}
+
+#gallery .glass-box {
+    border: 1px solid var(--gallery-border) !important;
+}
+
+#teams .glass-box {
+    border: 1px solid var(--teams-border) !important;
+}
+
+#contact .glass-box {
+    border: 1px solid var(--contact-border) !important;
+}
+
+/* Text Colors for Light Theme */
+body.light-theme * {
+    color: var(--text-light);
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3 {
+    color: var(--text-heading) !important;
+}
+
+body.light-theme .section-title {
+    color: var(--text-heading) !important;
+    text-shadow: none !important;
+}
+
+body.light-theme .section-subtitle {
+    color: var(--text-gray) !important;
+}
+
+/* Contact form styles for light theme */
+body.light-theme .form-group input,
+body.light-theme .form-group textarea {
+    background: rgba(72, 187, 120, 0.1) !important;
+    border: 1px solid var(--contact-border) !important;
+    color: var(--text-light) !important;
+}
+
+body.light-theme .form-group input:focus,
+body.light-theme .form-group textarea:focus {
+    border-color: var(--contact-border) !important;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.2) !important;
+    background: rgba(72, 187, 120, 0.15) !important;
+}
+
+body.light-theme .form-group input::placeholder,
+body.light-theme .form-group textarea::placeholder {
+    color: var(--text-gray) !important;
+}
+
+/* Contact info text for light theme */
+body.light-theme .contact-info h3,
+body.light-theme .contact-info p,
+body.light-theme .contact-info .contact-item {
+    color: var(--text-light) !important;
+}
+
+body.light-theme .contact-item i {
+    color: var(--contact-border) !important;
+}
+
+/* Contact button styling for light theme */
+body.light-theme #contact .btn-primary {
+    background: rgba(72, 187, 120, 0.1) !important;
+    border: 1px solid var(--contact-border) !important;
+    color: var(--text-light) !important;
+}
+
+body.light-theme #contact .btn-primary::before {
+    background: linear-gradient(90deg, 
+        rgba(72, 187, 120, 0.3) 0%,
+        rgba(72, 187, 120, 0.5) 50%,
+        rgba(72, 187, 120, 0.3) 100%) !important;
+}
+
+body.light-theme #contact .btn-primary:hover {
+    border-color: var(--contact-border) !important;
+    text-shadow: 0 0 10px rgba(72, 187, 120, 0.5) !important;
+}
+
+/* Contact social links for light theme */
+body.light-theme .contact-social-links a {
+    background: rgba(72, 187, 120, 0.1) !important;
+    border: 1px solid var(--contact-border) !important;
+    color: var(--text-light) !important;
+}
+
+body.light-theme .contact-social-links a:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Light theme background animation removal */
+body.light-theme::before {
+    display: none !important;
+}
+
+body.light-theme::after {
+    display: none !important;
+}
+
+/* Notification styles for light theme */
+body.light-theme .notification-success {
+    background: #E6FFFA;
+    border-color: #23765A;
+    color: #23765A;
+}
+
+body.light-theme .notification-warning {
+    background: #FFFBEA;
+    border-color: #B7791F;
+    color: #B7791F;
+}
+
+body.light-theme .notification-error {
+    background: #FFF5F5;
+    border-color: #C53030;
+    color: #C53030;
+}
+
+/* Notification page text colors for light theme */
+body.light-theme .notification-content h3 {
+    color: #000000 !important; /* Pure black for titles */
+}
+
+body.light-theme .notification-content p {
+    color: #2D3748 !important; /* Dark gray for content */
+}
+
+body.light-theme .notification-link {
+    color: #22C55E !important; /* Green for links to match theme */
+}
+
+body.light-theme .notification-link:hover {
+    color: #16A34A !important; /* Darker green on hover */
+}
+
+/* Notification page headers and titles */
+body.light-theme .notifications-page h1,
+body.light-theme .notifications-page h2,
+body.light-theme .notifications-page h3 {
+    color: #819cce !important; /* Pure black for all headers */
+}
+
+body.light-theme .notifications-page .section-title {
+    color: #12583d !important; /* Pure black for section titles */
+    text-shadow: none !important;
+}
+
+body.light-theme .notifications-page .section-subtitle {
+    color: #2D3748 !important; /* Dark gray for subtitles */
+}
+
+/* Notification page background override for light theme */
+body.light-theme .notifications-page {
+    background: #FFFFFF !important; /* Pure white background for notification page */
+}
+
+body.light-theme .notification-item {
+    background: rgba(248, 255, 248, 0.9) !important; /* White background with greenish tint */
+    border-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+body.light-theme .notification-item:hover {
+    background: rgba(240, 255, 240, 0.95) !important; /* Slightly more green on hover */
+    border-color: rgba(34, 197, 94, 0.4) !important;
+}
+
+body.light-theme .notification-item.unread {
+    border-left-color: #22C55E !important; /* Green border for unread */
+    background: rgba(240, 255, 240, 0.95) !important;
+}
+
+body.light-theme .notification-item.unread::before {
+    background: #22C55E !important;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5) !important;
+}
+
+/* Dark mode notification text colors (default) */
+.notification-content h3 {
+    color: #ffffff !important;
+}
+
+.notification-content p {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.notification-link {
+    color: #378d63 !important;
+}
+
+.notification-link:hover {
+    color: #4ecd83 !important;
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button styling for light theme */
+body.light-theme .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #ffffff !important;
+}
+
+body.light-theme .btn-secondary {
+    color: var(--text-light) !important;
+    border-color: var(--primary-color);
+}
+
+body.light-theme .btn-secondary:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Mobile responsive theme toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 15px;
+        right: 70px; /* Move left to avoid hamburger overlap */
+        padding: 8px 12px;
+        font-size: 12px;
+        gap: 6px;
+    }
+    
+    .theme-toggle-icon {
+        font-size: 14px;
+    }
+    
+    /* Ensure hamburger menu has space */
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+    }
+    
+    /* Hide theme toggle text on very small screens */
+    @media (max-width: 480px) {
+        .theme-toggle span {
+            display: none;
+        }
+        
+        .theme-toggle {
+            padding: 8px;
+            right: 65px;
+        }
+    }
+}

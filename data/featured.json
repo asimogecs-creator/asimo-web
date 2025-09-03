@@ -1,0 +1,40 @@
+{
+  "featuredBanners": [
+    {
+      "id": "banner-1",
+      "title": "Community Contribution Drive",
+      "subtitle": "Building a Better Tomorrow Together",
+      "description": "Join ASIMO in our mission to contribute to society through technology and innovation. Be part of meaningful projects that make a real difference in our community.",
+      "image": "assets/images/featured/contribution-banner.png",
+      "isPlaceholder": false,
+      "buttonText": "Get Involved",
+      "buttonLink": "#teams",
+      "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "order": 1
+    },
+    {
+      "id": "banner-2",
+      "title": "Engineers Day Celebration 2025",
+      "subtitle": "Honoring Innovation & Excellence",
+      "description": "Celebrating the spirit of engineering and technological advancement. Join us as we honor the brilliant minds who shape our future through innovation.",
+      "image": "assets/images/featured/engineers day.png",
+      "isPlaceholder": false,
+      "buttonText": "View Events",
+      "buttonLink": "#events",
+      "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      "order": 2
+    },
+    {
+      "id": "banner-3",
+      "title": "Join ASIMO Tech Club",
+      "subtitle": "Your Gateway to Technical Excellence",
+      "description": "Ready to embark on an exciting journey of learning and innovation? Join our vibrant community of tech enthusiasts and future engineers.",
+      "image": "assets/images/featured/recruitment.png",
+      "isPlaceholder": false,
+      "buttonText": "Apply Now",
+      "buttonLink": "#teams",
+      "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      "order": 3
+    }
+  ]
+}

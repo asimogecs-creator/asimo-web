@@ -1,0 +1,201 @@
+{
+  "teamMembers": {
+    "batches": [
+      {
+        "year": "2023",
+        "name": "Batch 2023",
+        "icon": "fas fa-rocket",
+        "description": "The newest innovators joining our technical legacy",
+        "members": [
+          {
+            "id": 1,
+            "name": "Abhijeet",
+            "photo": "./assets/images/members/2023/Abhijeet.jpg"
+          },
+          {
+            "id": 2,
+            "name": "Abhinav", 
+            "photo": "./assets/images/members/2023/abhinav.jpg"
+          },
+          {
+            "id": 3,
+            "name": "Alquama",
+            "photo": "./assets/images/members/2023/alquama.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Amandeep",
+            "photo": "./assets/images/members/2023/amandeep.jpg"
+          },
+          {
+            "id": 5,
+            "name": "Ankit",
+            "photo": "./assets/images/members/2023/ankit.jpg"
+          },
+          {
+            "id": 6,
+            "name": "Divya",
+            "photo": "./assets/images/members/2023/divya.jpg"
+          },
+          {
+            "id": 7,
+            "name": "Faiyaz",
+            "photo": "./assets/images/members/2023/faiyaz.jpg"
+          },
+          {
+            "id": 8,
+            "name": "Krishna Narayan",
+            "photo": "./assets/images/members/2023/krishnnarayan.jpg"
+          },
+          {
+            "id": 9,
+            "name": "Manas",
+            "photo": "./assets/images/members/2023/manas.jpg"
+          },
+          {
+            "id": 10,
+            "name": "Nausheen",
+            "photo": "./assets/images/members/2023/nausheen.jpg"
+          },
+          {
+            "id": 11,
+            "name": "Nikhil",
+            "photo": "./assets/images/members/2023/nikhilpic.jpg"
+          },
+          {
+            "id": 12,
+            "name": "Pranav",
+            "photo": "./assets/images/members/2023/pranav.jpg"
+          },
+          {
+            "id": 13,
+            "name": "Sammi",
+            "photo": "./assets/images/members/2023/sammi.jpg"
+          },
+          {
+            "id": 14,
+            "name": "Shalu",
+            "photo": "./assets/images/members/2023/shalu.jpg"
+          },
+          {
+            "id": 15,
+            "name": "Sushant",
+            "photo": "./assets/images/members/2023/sushant.jpg"
+          },
+          {
+            "id": 16,
+            "name": "Uday",
+            "photo": "./assets/images/members/2023/uday.jpg"
+          },
+          {
+            "id": 17,
+            "name": "Vikash",
+            "photo": "./assets/images/members/2023/vikash.jpg"
+          }
+        ]
+      },
+      {
+        "year": "2022",
+        "name": "Batch 2022",
+        "icon": "fas fa-users",
+        "description": "Experienced leaders driving innovation forward",
+        "members": [
+          {
+            "id": 18,
+            "name": "Aprajita",
+            "photo": "./assets/images/members/2022/aprajita.jpg"
+          },
+          {
+            "id": 19,
+            "name": "Ashutosh",
+            "photo": "./assets/images/members/2022/ashutosh.jpg"
+          },
+          {
+            "id": 20,
+            "name": "Bandhan",
+            "photo": "./assets/images/members/2022/bandhan.jpg"
+          },
+          {
+            "id": 21,
+            "name": "Rishabh",
+            "photo": "./assets/images/members/2022/rishabh.jpg"
+          },
+          {
+            "id": 22,
+            "name": "Rishi",
+            "photo": "./assets/images/members/2022/rishi.jpg"
+          },
+          {
+            "id": 23,
+            "name": "Rohan",
+            "photo": "./assets/images/members/2022/rohan.jpg"
+          },
+          {
+            "id": 24,
+            "name": "Shweta",
+            "photo": "./assets/images/members/2022/shweta.jpg"
+          },
+          {
+            "id": 25,
+            "name": "Sumit",
+            "photo": "./assets/images/members/2022/sumit.jpg"
+          },
+          {
+            "id": 26,
+            "name": "Saurabh",
+            "photo": "./assets/images/members/2022/saurabh.jpg"
+          },
+          {
+            "id": 27,
+            "name": "Ankit",
+            "photo": "./assets/images/members/2022/ankit.jpg"
+          },
+          {
+            "id": 28,
+            "name": "Badal",
+            "photo": "./assets/images/members/2022/badal.jpg"
+          }
+        ]
+      },
+      {
+        "year": "2021",
+        "name": "Batch 2021",
+        "icon": "fas fa-graduation-cap",
+        "description": "The founding pioneers of our technical excellence",
+        "members": [
+          {
+            "id": 29,
+            "name": "Aashu Prakash",
+            "photo": "./assets/images/members/general/aashu-prakash.jpg"
+          },
+          {
+            "id": 30,
+            "name": "Roma Jaiswal",
+            "photo": "./assets/images/members/general/roma-jaiswal.jpg"
+          },
+          {
+            "id": 31,
+            "name": "Simran",
+            "photo": "./assets/images/members/general/simran.jpg"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "lastUpdated": "2025-09-01",
+      "totalMembers": 31,
+      "version": "2.1",
+      "photoRequirements": {
+        "format": "JPG or PNG",
+        "size": "400x400px recommended",
+        "maxFileSize": "500KB",
+        "aspectRatio": "Square (1:1)"
+      },
+      "folderStructure": {
+        "batch2023": "./assets/images/members/2023/",
+        "batch2022": "./assets/images/members/2022/",
+        "batch2021": "./assets/images/members/general/"
+      }
+    }
+  }
+}

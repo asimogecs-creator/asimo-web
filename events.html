@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - GEC Samastipur Technical Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/advanced-graphics.css">
+    <link rel="stylesheet" href="css/dynamic-content.css">
+    <link rel="stylesheet" href="css/theme-system.css">
+    <link rel="stylesheet" href="css/events-extended.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattanakarn:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-sun theme-toggle-icon" id="theme-icon"></i>
+        <span id="theme-text">Light</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+        <div class="nav-container-desktop">
+            <div class="nav-glass-inner">
+                <div class="nav-menu-desktop">
+                    <div class="nav-item">
+                        <a href="index.html#home" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="events.html" class="nav-link active">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#workshops" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Workshops</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="gallery.html" class="nav-link">
+                            <i class="fas fa-images"></i>
+                            <span>Gallery</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#teams" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#contact" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                    <!-- Notification Button -->
+                    <div class="nav-item nav-notification">
+                        <a href="notifications.html" class="nav-link notification-btn" id="desktop-notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="notification-badge" id="desktop-notification-badge"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-menu">
+            <a href="index.html#home" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <!-- Mobile Notification Button - 2nd position -->
+            <a href="notifications.html" class="mobile-nav-link notification-btn" id="mobile-notification-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+                <span class="notification-badge" id="mobile-notification-badge"></span>
+            </a>
+            <a href="events.html" class="mobile-nav-link active">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Events</span>
+            </a>
+            <a href="index.html#workshops" class="mobile-nav-link">
+                <i class="fas fa-tools"></i>
+                <span>Workshops</span>
+            </a>
+            <a href="gallery.html" class="mobile-nav-link">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="index.html#teams" class="mobile-nav-link">
+                <i class="fas fa-users"></i>
+                <span>Teams</span>
+            </a>
+            <a href="index.html#contact" class="mobile-nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="mobile-hamburger" id="mobile-hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <main>
+        <section class="events-extended-section">
+            <div class="events-extended-header">
+                <h1 class="events-extended-title">All Events</h1>
+                <p class="events-extended-subtitle">Celebrating Innovation and Excellence</p>
+            </div>
+            
+            <div class="events-filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Events</button>
+                <button class="filter-tab" data-filter="upcoming">Upcoming</button>
+                <button class="filter-tab" data-filter="completed">Completed</button>
+                <button class="filter-tab" data-filter="featured">Featured</button>
+            </div>
+            
+            <div id="events-extended-grid" class="events-extended-grid">
+                <!-- Event cards will be injected here by JS -->
+                <div class="content-loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading events...</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="glass-footer">
+        <p>&copy; 2025 GEC Samastipur Technical Club</p>
+    </footer>
+
+    <script defer src="js/modules/events-manager.js"></script>
+    <script defer src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

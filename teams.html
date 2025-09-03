@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - ASIMO Technical Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/advanced-graphics.css">
+    <link rel="stylesheet" href="css/dynamic-content.css">
+    <link rel="stylesheet" href="css/theme-system.css">
+    <link rel="stylesheet" href="css/teams-extended.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattanakarn:wght@200;300;400;500;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-sun theme-toggle-icon" id="theme-icon"></i>
+        <span id="theme-text">Light</span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+        <div class="nav-container-desktop">
+            <div class="nav-glass-inner">
+                <div class="nav-menu-desktop">
+                    <div class="nav-item">
+                        <a href="index.html#home" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#events" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#workshops" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Workshops</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#gallery" class="nav-link">
+                            <i class="fas fa-images"></i>
+                            <span>Gallery</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="teams.html" class="nav-link active">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="index.html#contact" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                    <!-- Notification Button -->
+                    <div class="nav-item nav-notification">
+                        <a href="notifications.html" class="nav-link notification-btn" id="desktop-notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <span class="notification-badge" id="desktop-notification-badge"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-menu">
+            <a href="index.html#home" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <!-- Mobile Notification Button - 2nd position -->
+            <a href="notifications.html" class="mobile-nav-link notification-btn" id="mobile-notification-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+                <span class="notification-badge" id="mobile-notification-badge"></span>
+            </a>
+            <a href="index.html#events" class="mobile-nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Events</span>
+            </a>
+            <a href="index.html#workshops" class="mobile-nav-link">
+                <i class="fas fa-tools"></i>
+                <span>Workshops</span>
+            </a>
+            <a href="index.html#gallery" class="mobile-nav-link">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="teams.html" class="mobile-nav-link active">
+                <i class="fas fa-users"></i>
+                <span>Teams</span>
+            </a>
+            <a href="index.html#contact" class="mobile-nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="mobile-hamburger" id="mobile-hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress-light"></div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="teams-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">Our Team</h1>
+                <p class="page-subtitle">Meet the brilliant minds behind ASIMO Technical Club</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Dots -->
+    <div class="batch-navigation">
+        <div class="nav-dot" data-batch="2023">
+            <span class="batch-year">2023</span>
+        </div>
+        <div class="nav-dot" data-batch="2022">
+            <span class="batch-year">2022</span>
+        </div>
+        <div class="nav-dot" data-batch="2021">
+            <span class="batch-year">2021</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="teams-main">
+        <!-- Batch 2023 Section -->
+        <section id="batch-2023" class="batch-section">
+            <div class="container">
+                <div class="batch-header">
+                    <h2 class="batch-title">Batch 2023</h2>
+                    <p class="batch-description">The newest innovators joining our technical legacy</p>
+                </div>
+                <div class="members-grid" id="members-2023">
+                    <!-- Members will be loaded dynamically -->
+                    <div class="content-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading members...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch 2022 Section -->
+        <section id="batch-2022" class="batch-section">
+            <div class="container">
+                <div class="batch-header">
+                    <h2 class="batch-title">Batch 2022</h2>
+                    <p class="batch-description">Experienced leaders driving innovation forward</p>
+                </div>
+                <div class="members-grid" id="members-2022">
+                    <!-- Members will be loaded dynamically -->
+                    <div class="content-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading members...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch 2021 Section -->
+        <section id="batch-2021" class="batch-section">
+            <div class="container">
+                <div class="batch-header">
+                    <h2 class="batch-title">Batch 2021</h2>
+                    <p class="batch-description">The founding pioneers of our technical excellence</p>
+                </div>
+                <div class="members-grid" id="members-2021">
+                    <!-- Members will be loaded dynamically -->
+                    <div class="content-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading members...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ASIMO Tech Club</h3>
+                    <p>Innovating Tomorrow, Today</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asimo_gecsamastipur?utm_source=ig_web_button_share_sheet&igsh=MXZ1MjBmM2pucjh1cQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/asimo_gecsmp" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/asimo-gecsamastipur/posts/?feedView=all" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>GEC Samastipur</p>
+                    <p>Bihar, India</p>
+                    <p>https://www.asimogecs.com/</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>@asimo.All right reserve</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Dynamic Content Modules -->
+    <script src="js/modules/teams-manager.js"></script>
+    <script src="js/modules/content-manager.js"></script>
+    
+    <!-- Teams Extended Script -->
+    <script src="js/teams-extended.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

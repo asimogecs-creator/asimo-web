@@ -1,0 +1,228 @@
+/* Gallery Extended Page Styles - Dark Mode (Default) */
+.gallery-section {
+    padding: 120px 0 60px;
+    background: rgba(20, 20, 30, 0.7);
+    min-height: 100vh;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Pattanakarn', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.gallery-card {
+    background: linear-gradient(0deg, 
+        rgba(199, 121, 137, 0.9) 0%,    /* Light wine at bottom */
+        rgba(199, 121, 137, 0.7) 30%,   /* Lighter wine */
+        rgba(199, 121, 137, 0.5) 70%,   /* Even lighter */
+        rgba(199, 121, 137, 0.3) 100%   /* Very light wine at top */
+    );
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(199, 121, 137, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(199, 121, 137, 0.5);
+    overflow: hidden;
+    transition: all 0.18s ease; /* Faster transition to match AOS duration */
+    aspect-ratio: 4/3;
+    position: relative;
+    will-change: transform, opacity; /* Optimize for animations */
+    transform: translateZ(0); /* Force GPU acceleration */
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px) translateZ(0); /* Keep GPU acceleration */
+    box-shadow: 0 15px 40px rgba(199, 121, 137, 0.6);
+    border-color: rgba(199, 121, 137, 0.8);
+    background: linear-gradient(0deg, 
+        rgba(199, 121, 137, 1) 0%,      /* Stronger wine at bottom on hover */
+        rgba(199, 121, 137, 0.8) 30%,   /* Strong wine */
+        rgba(199, 121, 137, 0.6) 70%,   /* Medium wine */
+        rgba(199, 121, 137, 0.4) 100%   /* Light wine at top */
+    );
+}
+
+.gallery-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.3s ease; /* Faster shine effect */
+    z-index: 1;
+}
+
+/* Light Mode Gallery Styles */
+body.light-theme .gallery-section {
+    background: linear-gradient(180deg, 
+        rgba(240, 255, 250, 0.3) 0%,    /* Very light mint at top */
+        rgba(255, 255, 255, 0.9) 30%,   /* Transitioning to white */
+        rgba(255, 255, 255, 1) 60%,     /* Pure white in middle */
+        rgba(255, 255, 255, 1) 100%     /* Pure white at bottom */
+    );
+}
+
+body.light-theme .gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.95;
+    z-index: -1;
+}
+
+body.light-theme .section-title {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+body.light-theme .gallery-card {
+    background: linear-gradient(0deg, 
+        rgba(199, 121, 137, 0.8) 0%,    /* Light wine at bottom */
+        rgba(199, 121, 137, 0.6) 30%,   /* Lighter wine */
+        rgba(199, 121, 137, 0.4) 70%,   /* Even lighter */
+        rgba(199, 121, 137, 0.2) 100%   /* Very light wine at top */
+    );
+    box-shadow: 0 8px 32px 0 rgba(199, 121, 137, 0.3);
+    border: 1px solid rgba(199, 121, 137, 0.4);
+    transition: all 0.18s ease; /* Match fast transition */
+    will-change: transform, opacity; /* Optimize for animations */
+}
+
+body.light-theme .gallery-card:hover {
+    box-shadow: 0 15px 40px rgba(199, 121, 137, 0.5);
+    border-color: rgba(199, 121, 137, 0.7);
+    background: linear-gradient(0deg, 
+        rgba(199, 121, 137, 0.9) 0%,    /* Stronger wine at bottom on hover */
+        rgba(199, 121, 137, 0.7) 30%,   /* Strong wine */
+        rgba(199, 121, 137, 0.5) 70%,   /* Medium wine */
+        rgba(199, 121, 137, 0.3) 100%   /* Light wine at top */
+    );
+}
+
+body.light-theme .gallery-card::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.3s ease; /* Faster transition */
+}
+
+/* Light Mode Text Color Overrides for Gallery Page */
+body.light-theme .gallery-section h1,
+body.light-theme .gallery-section h2,
+body.light-theme .gallery-section h3,
+body.light-theme .gallery-section h4,
+body.light-theme .gallery-section h5,
+body.light-theme .gallery-section h6 {
+    color: #000000 !important;
+}
+
+body.light-theme .gallery-section p,
+body.light-theme .gallery-section span,
+body.light-theme .gallery-section div,
+body.light-theme .gallery-section a,
+body.light-theme .gallery-section li {
+    color: #000000 !important;
+}
+
+body.light-theme .glass-footer {
+    color: #000000 !important;
+}
+
+body.light-theme .glass-footer p {
+    color: #000000 !important;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 2rem auto;
+    max-width: 1600px;
+    padding: 0 40px;
+}
+
+.gallery-card:hover::before {
+    left: 100%;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.18s ease; /* Faster image scaling */
+    will-change: transform; /* Optimize for transform animations */
+    backface-visibility: hidden; /* Reduce flickering */
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05) translateZ(0); /* Keep GPU acceleration */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 0 30px;
+        max-width: 1400px;
+    }
+}
+
+@media (max-width: 968px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 100px 0 40px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .gallery-card {
+        border-radius: 20px;
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .gallery-card {
+        border-radius: 15px;
+        aspect-ratio: 4/3;
+    }
+}

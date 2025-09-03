@@ -1,0 +1,156 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Technical Club Activities",
+      "description": "Students engaging in technical discussions and collaborative learning",
+      "image": "./assets/images/gallery/main page/DSC_3250.JPG",
+      "category": "event",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Innovation Workshop",
+      "description": "Hands-on workshop sessions with cutting-edge technology",
+      "image": "./assets/images/gallery/main page/DSC_3371 (1).JPG",
+      "category": "workshop",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Team Collaboration",
+      "description": "Students working together on innovative technical projects",
+      "image": "./assets/images/gallery/main page/DSC_3778 (1).JPG",
+      "category": "collaboration",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Technical Presentation",
+      "description": "Students presenting their innovative projects and technical solutions",
+      "image": "./assets/images/gallery/gallery extended/DSC_3167.JPG",
+      "category": "event",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Workshop Session",
+      "description": "Interactive learning sessions with hands-on experience",
+      "image": "./assets/images/gallery/gallery extended/DSC_3218.JPG",
+      "category": "workshop",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Team Discussion",
+      "description": "Collaborative brainstorming and technical discussions",
+      "image": "./assets/images/gallery/gallery extended/DSC_3219.JPG",
+      "category": "collaboration",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Technical Demonstration",
+      "description": "Live demonstration of technical projects and innovations",
+      "image": "./assets/images/gallery/gallery extended/DSC_3228.JPG",
+      "category": "event",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "title": "Project Development",
+      "description": "Students working on cutting-edge technical projects",
+      "image": "./assets/images/gallery/gallery extended/DSC_3239.JPG",
+      "category": "project",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "title": "Learning Session",
+      "description": "Interactive learning and skill development activities",
+      "image": "./assets/images/gallery/gallery extended/DSC_3248.JPG",
+      "category": "workshop",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "title": "Club Activities",
+      "description": "Regular technical club activities and engagement",
+      "image": "./assets/images/gallery/gallery extended/DSC_3260.JPG",
+      "category": "event",
+      "featured": false
+    },
+    {
+      "id": 11,
+      "title": "Innovation Hub",
+      "description": "Creative thinking and innovation development sessions",
+      "image": "./assets/images/gallery/gallery extended/DSC_3495.JPG",
+      "category": "innovation",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "title": "Technical Exhibition",
+      "description": "Showcasing technical projects and innovations",
+      "image": "./assets/images/gallery/gallery extended/DSC_3847.JPG",
+      "category": "exhibition",
+      "featured": false
+    },
+    {
+      "id": 13,
+      "title": "Competition Event",
+      "description": "Technical competitions and skill challenges",
+      "image": "./assets/images/gallery/gallery extended/DSC_3997.JPG",
+      "category": "competition",
+      "featured": false
+    },
+    {
+      "id": 14,
+      "title": "Workshop Training",
+      "description": "Professional training and skill development workshops",
+      "image": "./assets/images/gallery/gallery extended/IMG-20240907-WA0062.jpg",
+      "category": "workshop",
+      "featured": false
+    },
+    {
+      "id": 15,
+      "title": "Technical Seminar",
+      "description": "Educational seminars on latest technology trends",
+      "image": "./assets/images/gallery/gallery extended/IMG20231007104140.jpg",
+      "category": "seminar",
+      "featured": false
+    },
+    {
+      "id": 16,
+      "title": "Project Showcase",
+      "description": "Students showcasing their completed technical projects",
+      "image": "./assets/images/gallery/gallery extended/IMG_20241203_155201.jpg",
+      "category": "showcase",
+      "featured": false
+    },
+    {
+      "id": 17,
+      "title": "Club Meeting",
+      "description": "Regular club meetings and planning sessions",
+      "image": "./assets/images/gallery/gallery extended/WhatsApp Image 2025-09-01 at 16.29.53 (1).jpeg",
+      "category": "meeting",
+      "featured": false
+    },
+    {
+      "id": 18,
+      "title": "Team Building",
+      "description": "Team building activities and collaborative exercises",
+      "image": "./assets/images/gallery/gallery extended/WhatsApp Image 2025-09-01 at 16.29.53.jpeg",
+      "category": "team",
+      "featured": false
+    },
+    {
+      "id": 19,
+      "title": "Technical Workshop",
+      "description": "Advanced technical workshops and hands-on training",
+      "image": "./assets/images/gallery/gallery extended/WhatsApp Image 2025-09-01 at 16.29.54.jpeg",
+      "category": "workshop",
+      "featured": false
+    }
+  ]
+}

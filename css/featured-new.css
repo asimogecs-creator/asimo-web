@@ -248,7 +248,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .featured-banners-container {
-        height: 650px;
+        height: 850px;
     }
     
     .featured-card {
@@ -258,7 +258,7 @@
     }
     
     .card-image {
-        min-height: 250px;
+        min-height: 200px;
         flex: none;
     }
     
@@ -312,7 +312,7 @@
 /* Extra Small Mobile Devices */
 @media (max-width: 480px) {
     .featured-banners-container {
-        height: 700px;
+        height: 800px;
     }
     
     .featured-card {

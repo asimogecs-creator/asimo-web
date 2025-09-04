@@ -20,7 +20,7 @@
     --nav-hover: #ffffff;
     
     /* Section-specific backgrounds */
-    --home-bg: radial-gradient(ellipse at top, #111A2E, #0D0D10);
+    --home-bg: url('../assets/images/section1 bg.jpg'), radial-gradient(ellipse at top, rgba(13, 13, 16, 0.8), #0D0D10);
     --events-bg: radial-gradient(ellipse at top, rgba(8, 217, 214, 0.15), #0D0D10 70%);
     --workshops-bg: radial-gradient(ellipse at top, rgba(138, 43, 226, 0.15), #0D0D10 70%);
     --gallery-bg: radial-gradient(ellipse at top, rgba(255, 0, 255, 0.15), #0D0D10 70%);
@@ -56,7 +56,7 @@ body.light-theme {
     --nav-hover: #ffffff;
     
     /* Section-specific backgrounds with auras */
-    --home-bg: #F8F9FA;
+    --home-bg: url('../assets/images/main bg light.jpg'), #F8F9FA;
     --events-bg: linear-gradient(180deg, rgba(72, 187, 120, 0.1) 0%, #F8F9FA 30%);
     --workshops-bg: linear-gradient(180deg, rgba(237, 137, 54, 0.1) 0%, #F8F9FA 30%);
     --gallery-bg: linear-gradient(180deg, rgba(128, 90, 213, 0.1) 0%, #F8F9FA 30%);
@@ -384,6 +384,9 @@ body.light-theme .nav-close {
 /* Section Backgrounds */
 #home {
     background: var(--home-bg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 #events {

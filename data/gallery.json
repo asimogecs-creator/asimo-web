@@ -151,6 +151,31 @@
       "image": "./assets/images/gallery/gallery extended/WhatsApp Image 2025-09-01 at 16.29.54.jpeg",
       "category": "workshop",
       "featured": false
+    },
+    {
+      "id": 20,
+      "title": "Tech Fest",
+      "description": "Annual technical festival celebrating innovation and technology",
+      "image": "./assets/images/gallery/gallery extended/IMG_4834 (1).jpg",
+      "category": "event",
+      "featured": false
+    },
+    {
+      "id": 21,
+      "title": "Bot Competition",
+      "description": "Jashn-e-Azadi robotics competition event",
+      "image": "./assets/images/gallery/gallery extended/dj night.jpg",
+      "category": "event",
+      "featured": false
+    },
+    {
+      "id": 22,
+      "title": "DJ Night",
+      "description": "Annual technical festival celebration with DJ night",
+      "image": "./assets/images/gallery/gallery extended/dj night.jpg",
+      "category": "event",
+      "featured": false
     }
+    
   ]
 }

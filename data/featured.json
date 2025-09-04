@@ -19,8 +19,8 @@
       "description": "Celebrating the spirit of engineering and technological advancement. Join us as we honor the brilliant minds who shape our future through innovation.",
       "image": "assets/images/featured/engineers day.png",
       "isPlaceholder": false,
-      "buttonText": "View Events",
-      "buttonLink": "#events",
+      "buttonText": "15th sep",
+      "buttonLink": "#featured",
       "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       "order": 2
     },
@@ -28,11 +28,11 @@
       "id": "banner-3",
       "title": "Join ASIMO Tech Club",
       "subtitle": "Your Gateway to Technical Excellence",
-      "description": "Ready to embark on an exciting journey of learning and innovation? Join our vibrant community of tech enthusiasts and future engineers.",
+      "description": "Ready to embark on an exciting journey of learning and innovation? Join our vibrant community of tech enthusiasts and future explorers.",
       "image": "assets/images/featured/recruitment.png",
       "isPlaceholder": false,
       "buttonText": "Apply Now",
-      "buttonLink": "#teams",
+      "buttonLink": "#featured",
       "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       "order": 3
     }

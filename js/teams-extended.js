@@ -167,12 +167,20 @@ class TeamsExtended {
         const initialsContent = `<span class="initials" ${member.photo ? 'style="display:none"' : ''}>${this.getInitials(member.name)}</span>`;
 
         card.innerHTML = `
-            <div class="member-avatar">
-                ${avatarContent}
-                ${initialsContent}
+            <div class="member-lens">
+                <div class="member-lens-bg"></div>
+                <div class="member-avatar">
+                    ${avatarContent}
+                    ${initialsContent}
+                </div>
             </div>
-            <h3 class="member-name">${member.name}</h3>
+            <div class="member-content">
+                <h3 class="member-name">${member.name}</h3>
+            </div>
         `;
+
+        // Add 3D tilt effect
+        this.add3DTiltEffect(card);
 
         return card;
     }
@@ -320,6 +328,29 @@ class TeamsExtended {
                 this.scrollToBatch(batchYear);
             }, 500);
         }
+    }
+
+    // Add 3D tilt effect to member cards
+    add3DTiltEffect(card) {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const x = (e.clientX - centerX) / (rect.width / 2);
+            const y = (e.clientY - centerY) / (rect.height / 2);
+            
+            // Adjust the rotation strength
+            const rotateX = y * -8; // Invert y for natural rotation
+            const rotateY = x * 8;
+            
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+        });
+
+        // Reset the card position when the mouse leaves
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0) rotateY(0) translateY(0) scale(1)';
+        });
     }
 }
 

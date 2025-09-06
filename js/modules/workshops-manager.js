@@ -32,7 +32,7 @@ class WorkshopsManager {
         const workshopDiv = document.createElement('div');
         workshopDiv.className = 'workshop-card glass-container';
         workshopDiv.setAttribute('data-aos', 'zoom-in');
-        workshopDiv.setAttribute('data-aos-delay', (index * 100).toString());
+        workshopDiv.setAttribute('data-aos-delay', (index * 1).toString());
 
         workshopDiv.innerHTML = `
             <div class="workshop-icon">

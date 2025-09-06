@@ -102,7 +102,7 @@ class FeaturedManager {
         bannerDiv.className = 'featured-banner';
         bannerDiv.setAttribute('data-index', index);
         bannerDiv.setAttribute('data-aos', 'fade-up');
-        bannerDiv.setAttribute('data-aos-delay', '100');
+        bannerDiv.setAttribute('data-aos-delay', '1');
 
         const imageUrl = banner.isPlaceholder 
             ? `https://via.placeholder.com/800x400/${this.getPlaceholderColor(index)}/ffffff?text=${encodeURIComponent(banner.title)}`

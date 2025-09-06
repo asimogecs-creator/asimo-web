@@ -3,6 +3,18 @@
 /* Light Mode ("Aura Light") - Sophisticated Teal Theme */
 body.light-theme {
     background: #F8F9FA;
+    background-image: url('https://images.unsplash.com/photo-1543714392-6225d55b08a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Dark Mode Background */
+body:not(.light-theme) {
+    background-image: url('https://images.unsplash.com/photo-1543714392-6225d55b08a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 body.light-theme .teams-header {
@@ -11,9 +23,30 @@ body.light-theme .teams-header {
 }
 
 body.light-theme .member-card {
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.25);
     border: 1px solid rgba(56, 161, 105, 0.4);
     color: #1A202C;
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme .member-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(56, 161, 105, 0.6);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+body.light-theme .member-lens {
+    border: 2px solid rgba(56, 161, 105, 0.5);
+}
+
+body.light-theme .member-name {
+    color: #1A202C;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 body.light-theme .member-name {
@@ -268,77 +301,134 @@ body:not(.light-theme) .nav-dot.active {
 /* Members Grid */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    justify-items: center;
 }
 
-/* Member Cards */
+/* Enhanced Glassmorphism Member Cards with Lens Effect */
 .member-card {
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
-    overflow: hidden;
+    width: 320px;
+    height: 420px; /* Fixed height to prevent overlapping */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: white;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    transform: rotate(-2deg);
-    aspect-ratio: 3/4; /* Portrait rectangle ratio */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     /* GPU acceleration for ultra-fast rendering */
     will-change: transform, opacity;
     transform-style: preserve-3d;
     backface-visibility: hidden;
+    perspective: 1000px;
 }
 
-.member-card:nth-child(even) {
-    transform: rotate(2deg);
+/* The "Lens" Effect for Avatar */
+.member-lens {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    z-index: 2;
 }
 
-.member-card:nth-child(3n) {
-    transform: rotate(-1deg);
+.member-lens-bg {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(1.2) contrast(1.1);
 }
 
+/* Card Variations and Hover Effects */
 .member-card:hover {
-    transform: rotate(0deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    transition: all 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15);
 }
 
+/* Enhanced Member Avatar within Lens */
 .member-avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    margin: 0 auto 25px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    font-weight: 700;
-    position: relative;
     overflow: hidden;
+    z-index: 3;
 }
 
 .member-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.member-name {
-    font-size: 1.5rem;
+.member-avatar .initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 162, 255, 0.6));
+    font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 0;
-    margin-top: auto;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Area - positioned below lens */
+.member-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+/* Member Name Styling */
+.member-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
     text-align: center;
     line-height: 1.3;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .member-role {

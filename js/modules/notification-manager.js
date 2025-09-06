@@ -95,7 +95,7 @@ class NotificationManager {
         const div = document.createElement('div');
         div.className = `notification-item ${!notification.isRead ? 'unread' : ''}`;
         div.setAttribute('data-aos', 'fade-up');
-        div.setAttribute('data-aos-delay', (index * 50 + 200).toString());
+        div.setAttribute('data-aos-delay', (index * 1 ).toString());
         div.setAttribute('data-notification-id', notification.id);
 
         div.innerHTML = `

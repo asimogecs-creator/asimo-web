@@ -1,41 +1,48 @@
 // Main JavaScript for GEC Tech Club Website - Advanced Version
 
-// Theme Management
+// Theme Management - Modern Bent Glass Toggle
 function toggleTheme() {
     const body = document.body;
-    const themeIcon = document.getElementById('theme-icon');
-    const themeText = document.getElementById('theme-text');
+    const modernToggle = document.querySelector('.modern-theme-toggle');
     
     if (body.classList.contains('light-theme')) {
         // Switch to dark theme
         body.classList.remove('light-theme');
-        themeIcon.className = 'fas fa-sun theme-toggle-icon';
-        themeText.textContent = 'Light';
         localStorage.setItem('theme', 'dark');
+        
+        // Add click animation
+        if (modernToggle) {
+            modernToggle.style.transform = 'translateY(-2px) scale(0.95)';
+            setTimeout(() => {
+                modernToggle.style.transform = 'translateY(-2px) scale(1.05)';
+            }, 150);
+        }
     } else {
         // Switch to light theme
         body.classList.add('light-theme');
-        themeIcon.className = 'fas fa-moon theme-toggle-icon';
-        themeText.textContent = 'Dark';
         localStorage.setItem('theme', 'light');
+        
+        // Add click animation
+        if (modernToggle) {
+            modernToggle.style.transform = 'translateY(-2px) scale(0.95)';
+            setTimeout(() => {
+                modernToggle.style.transform = 'translateY(-2px) scale(1.05)';
+            }, 150);
+        }
     }
 }
 
-// Initialize theme on page load
+// Initialize theme on page load - Modern Toggle
 function initTheme() {
     const savedTheme = localStorage.getItem('theme');
-    const themeIcon = document.getElementById('theme-icon');
-    const themeText = document.getElementById('theme-text');
     
     if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
-        if (themeIcon) themeIcon.className = 'fas fa-moon theme-toggle-icon';
-        if (themeText) themeText.textContent = 'Dark';
     } else {
         document.body.classList.remove('light-theme');
-        if (themeIcon) themeIcon.className = 'fas fa-sun theme-toggle-icon';
-        if (themeText) themeText.textContent = 'Light';
     }
+    
+    // No need to manually update icons as CSS handles the transitions
 }
 
 // Active navigation link highlighting

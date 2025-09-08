@@ -11,10 +11,22 @@ class NewFeaturedManager {
             await this.loadBanners();
             this.renderBanners();
             this.setupAutoSlide();
+            this.setupResizeHandler();
         } catch (error) {
             console.error('Featured Manager Error:', error);
             this.showErrorState();
         }
+    }
+
+    setupResizeHandler() {
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                // Re-render banners on resize to update mobile/desktop behavior
+                this.renderBanners();
+            }, 300);
+        });
     }
 
     async loadBanners() {
@@ -61,18 +73,36 @@ class NewFeaturedManager {
         card.className = `featured-card ${index === 0 ? 'active' : ''}`;
         card.setAttribute('data-index', index);
         
+        // Check if it's mobile device and if link exists
+        const isMobile = window.innerWidth <= 768;
+        const hasValidLink = banner.buttonLink && banner.buttonLink.trim() !== '';
+        
+        // Create button HTML only if there's a valid link
+        const buttonHTML = hasValidLink ? 
+            `<a href="${banner.buttonLink}" class="card-button">
+                ${banner.buttonText}
+                <i class="fas fa-arrow-right"></i>
+            </a>` : 
+            `<span class="card-button disabled">
+                ${banner.buttonText}
+                <i class="fas fa-info-circle"></i>
+            </span>`;
+        
+        // Mobile image click handler only if there's a valid link
+        const mobileClickHandler = (isMobile && hasValidLink) ? 
+            `onclick="window.open('${banner.buttonLink}', '_blank')"` : '';
+        
         card.innerHTML = `
-            <div class="card-image" style="background-image: url('${banner.image}');">
+            <div class="card-image ${isMobile && hasValidLink ? 'mobile-clickable' : ''}" 
+                 style="background-image: url('${banner.image}');"
+                 ${mobileClickHandler}>
                 <div class="card-gradient" style="background: ${banner.gradient}"></div>
             </div>
             <div class="card-content">
                 <h3 class="card-title">${banner.title}</h3>
                 <h4 class="card-subtitle">${banner.subtitle}</h4>
                 <p class="card-description">${banner.description}</p>
-                <a href="${banner.buttonLink}" class="card-button">
-                    ${banner.buttonText}
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                ${buttonHTML}
             </div>
         `;
         
@@ -149,7 +179,7 @@ class NewFeaturedManager {
         
         this.autoSlideInterval = setInterval(() => {
             this.nextSlide();
-        }, 5000); // 5 seconds
+        }, 8000); // 8 seconds
     }
 
     resetAutoSlide() {

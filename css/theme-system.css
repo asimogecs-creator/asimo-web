@@ -72,250 +72,40 @@ body.light-theme {
     --contact-border: #48BB78;
 }
 
-/* Modern Bent Glass Theme Toggle */
-.modern-theme-toggle {
+/* Theme Toggle Button */
+.theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 9999;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 12px 20px;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modern-theme-toggle:hover {
-    transform: translateY(-2px) scale(1.05);
-}
-
-.toggle-track {
-    width: 80px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    position: relative;
-    overflow: hidden;
-    
-    /* Bent glass effect with subtle curve */
-    clip-path: polygon(8% 0%, 92% 0%, 100% 25%, 100% 75%, 92% 100%, 8% 100%, 0% 75%, 0% 25%);
-    
-    /* Enhanced glass morphism */
-    box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -2px 0 rgba(255, 255, 255, 0.05);
-    
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toggle-slider {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-    backdrop-filter: blur(10px);
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
-    /* Enhanced glass ball effect */
-    box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.2),
-        0 2px 8px rgba(0, 0, 0, 0.1),
-        inset 0 2px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
-}
-
-.toggle-icon {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
+    gap: 10px;
     transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    color: var(--text-light);
 }
 
-.toggle-icon i {
-    font-size: 14px;
-    transition: all 0.3s ease;
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Sun icon positioning */
-.sun-icon {
-    color: #FFB800;
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
+.theme-toggle-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
 }
 
-/* Moon icon positioning */
-.moon-icon {
-    color: #E0E0E0;
-    opacity: 0;
-    transform: scale(0.8) rotate(-45deg);
-}
-
-/* Light theme state */
-body.light-theme .toggle-track {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 215, 0, 0.4);
-    box-shadow: 
-        0 8px 32px 0 rgba(255, 215, 0, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 0 rgba(255, 215, 0, 0.1);
-}
-
-body.light-theme .toggle-slider {
-    left: 44px; /* Move to right side */
-    background: linear-gradient(135deg, rgba(255, 235, 150, 0.95), rgba(255, 215, 0, 0.8));
-    box-shadow: 
-        0 4px 16px rgba(255, 215, 0, 0.3),
-        0 2px 8px rgba(255, 215, 0, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.5),
-        inset 0 -1px 0 rgba(255, 180, 0, 0.2);
-}
-
-body.light-theme .sun-icon {
-    opacity: 0;
-    transform: scale(0.8) rotate(45deg);
-}
-
-body.light-theme .moon-icon {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    color: #4A5568;
-}
-
-/* Dark theme state (default) */
-body:not(.light-theme) .toggle-track {
-    background: rgba(30, 40, 60, 0.3);
-    border-color: rgba(139, 188, 255, 0.4);
-    box-shadow: 
-        0 8px 32px 0 rgba(139, 188, 255, 0.15),
-        inset 0 2px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -2px 0 rgba(139, 188, 255, 0.1);
-}
-
-body:not(.light-theme) .toggle-slider {
-    left: 4px; /* Stay on left side */
-    background: linear-gradient(135deg, rgba(200, 220, 255, 0.95), rgba(139, 188, 255, 0.8));
-    box-shadow: 
-        0 4px 16px rgba(139, 188, 255, 0.3),
-        0 2px 8px rgba(139, 188, 255, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -1px 0 rgba(100, 150, 255, 0.2);
-}
-
-/* Hover effects */
-.modern-theme-toggle:hover .toggle-track {
-    transform: scale(1.05);
-    box-shadow: 
-        0 12px 40px 0 rgba(139, 188, 255, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.15),
-        inset 0 -2px 0 rgba(139, 188, 255, 0.15);
-}
-
-body.light-theme .modern-theme-toggle:hover .toggle-track {
-    box-shadow: 
-        0 12px 40px 0 rgba(255, 215, 0, 0.25),
-        inset 0 2px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -2px 0 rgba(255, 215, 0, 0.15);
-}
-
-.modern-theme-toggle:hover .toggle-slider {
-    transform: scale(1.1);
-}
-
-/* Active state animation */
-.modern-theme-toggle:active .toggle-slider {
-    transform: scale(0.95);
-}
-
-/* Pulsing animation for icons */
-@keyframes iconPulse {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(5deg); }
-}
-
-.toggle-icon.sun-icon {
-    animation: iconPulse 3s ease-in-out infinite;
-}
-
-.toggle-icon.moon-icon {
-    animation: iconPulse 3s ease-in-out infinite reverse;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .modern-theme-toggle {
-        top: 15px;
-        right: 70px; /* Move left to avoid hamburger overlap */
-        transform: scale(0.9);
-    }
-    
-    .toggle-track {
-        width: 70px;
-        height: 35px;
-    }
-    
-    .toggle-slider {
-        width: 28px;
-        height: 28px;
-        top: 3.5px;
-        left: 3.5px;
-    }
-    
-    body.light-theme .toggle-slider {
-        left: 38.5px;
-    }
-    
-    .toggle-icon {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .toggle-icon i {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .modern-theme-toggle {
-        right: 65px;
-        transform: scale(0.8);
-    }
-    
-    .toggle-track {
-        width: 60px;
-        height: 30px;
-    }
-    
-    .toggle-slider {
-        width: 24px;
-        height: 24px;
-        top: 3px;
-        left: 3px;
-    }
-    
-    body.light-theme .toggle-slider {
-        left: 33px;
-    }
-    
-    .toggle-icon {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .toggle-icon i {
-        font-size: 10px;
-    }
+.theme-toggle:hover .theme-toggle-icon {
+    transform: rotate(180deg);
 }
 
 /* Logo Dynamic Switching */
@@ -850,11 +640,35 @@ body.light-theme .btn-secondary:hover {
 
 /* Mobile responsive theme toggle */
 @media (max-width: 768px) {
+    .theme-toggle {
+        top: 15px;
+        right: 70px; /* Move left to avoid hamburger overlap */
+        padding: 8px 12px;
+        font-size: 12px;
+        gap: 6px;
+    }
+    
+    .theme-toggle-icon {
+        font-size: 14px;
+    }
+    
     /* Ensure hamburger menu has space */
     .hamburger {
         position: fixed;
         top: 20px;
         right: 20px;
         z-index: 10000;
+    }
+    
+    /* Hide theme toggle text on very small screens */
+    @media (max-width: 480px) {
+        .theme-toggle span {
+            display: none;
+        }
+        
+        .theme-toggle {
+            padding: 8px;
+            right: 65px;
+        }
     }
 }

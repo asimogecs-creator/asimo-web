@@ -188,6 +188,270 @@ body:not(.light-theme) .nav-dot.active {
     overflow: hidden;
 }
 
+/* Inspirational Quotes Section */
+.quotes-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.quotes-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.quotes-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quotes-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.quotes-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-card {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quote-card.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.quote-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(0.3);
+    z-index: 0;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+.quote-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.quote-author::before {
+    content: "— ";
+    opacity: 0.6;
+}
+
+.quotes-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.quote-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.quote-indicators {
+    display: flex;
+    gap: 12px;
+}
+
+.quote-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quote-indicator.active {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.quote-indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/* Light Mode Quotes Styling */
+body.light-theme .quotes-title {
+    background: linear-gradient(135deg, #38A169 0%, #2D3748 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .quotes-subtitle {
+    color: #5A6472;
+}
+
+body.light-theme .quote-card {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(56, 161, 105, 0.4);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme .quote-nav-btn {
+    background: rgba(56, 161, 105, 0.2);
+    border: 1px solid rgba(56, 161, 105, 0.4);
+    color: #38A169;
+}
+
+body.light-theme .quote-nav-btn:hover {
+    background: #38A169;
+    color: white;
+}
+
+body.light-theme .quote-indicator {
+    background: rgba(56, 161, 105, 0.3);
+}
+
+body.light-theme .quote-indicator.active {
+    background: #38A169;
+}
+
+/* Dark Mode Quotes Styling */
+body.dark-theme .quotes-title,
+body:not(.light-theme) .quotes-title {
+    background: linear-gradient(135deg, #E8EDED 0%, #BCC8C9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .quotes-subtitle,
+body:not(.light-theme) .quotes-subtitle {
+    color: #BCC8C9;
+}
+
+body.dark-theme .quote-card,
+body:not(.light-theme) .quote-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    box-shadow: inset 0 0 20px rgba(232, 237, 237, 0.1);
+}
+
+body.dark-theme .quote-nav-btn,
+body:not(.light-theme) .quote-nav-btn {
+    background: rgba(30, 42, 43, 0.6);
+    border: 1px solid rgba(232, 237, 237, 0.2);
+    color: #BCC8C9;
+}
+
+body.dark-theme .quote-nav-btn:hover,
+body:not(.light-theme) .quote-nav-btn:hover {
+    background: rgba(232, 237, 237, 0.9);
+    color: #1E2A2B;
+}
+
+body.dark-theme .quote-indicator,
+body:not(.light-theme) .quote-indicator {
+    background: rgba(232, 237, 237, 0.3);
+}
+
+body.dark-theme .quote-indicator.active,
+body:not(.light-theme) .quote-indicator.active {
+    background: #E8EDED;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .header-content {
     position: relative;
     z-index: 2;
@@ -803,6 +1067,53 @@ body:not(.light-theme) .no-members i {
         padding: 0 20px;
         margin-bottom: 30px;
     }
+
+    /* Quotes responsive */
+    .quotes-section {
+        padding: 60px 0;
+    }
+
+    .quotes-title {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+
+    .quotes-subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .quotes-carousel {
+        margin: 0 20px;
+        min-height: 300px;
+    }
+
+    .quote-card {
+        padding: 30px;
+        border-radius: 20px;
+        min-height: 280px;
+    }
+
+    .quote-text {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+
+    .quote-author {
+        font-size: 1rem;
+    }
+
+    .quotes-navigation {
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .quote-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
     
     .members-grid {
         display: grid;
@@ -876,6 +1187,68 @@ body:not(.light-theme) .no-members i {
         font-size: 0.9rem;
         text-align: center;
         padding: 0 15px;
+    }
+
+    /* Quotes mobile styling */
+    .quotes-section {
+        padding: 40px 0;
+    }
+
+    .quotes-title {
+        font-size: 1.6rem;
+        padding: 0 15px;
+        line-height: 1.2;
+    }
+
+    .quotes-subtitle {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+
+    .quotes-carousel {
+        margin: 0 15px;
+        min-height: 280px;
+    }
+
+    .quote-card {
+        padding: 25px;
+        border-radius: 18px;
+        min-height: 250px;
+    }
+
+    .quote-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .quote-text {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .quote-author {
+        font-size: 0.95rem;
+    }
+
+    .quotes-navigation {
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .quote-nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .quote-indicators {
+        gap: 8px;
+    }
+
+    .quote-indicator {
+        width: 10px;
+        height: 10px;
     }
     
     .batch-section {

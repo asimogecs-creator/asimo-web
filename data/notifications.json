@@ -3,7 +3,7 @@
     {
       "id": "sih-registration",
       "title": "Register to SIH",
-      "message": "Smart India Hackathon (SIH) registration is now open! Don't miss this opportunity to showcase your innovation skills. <a href='#workshops' class='notification-link'>Register now</a> - Deadline approaching fast!",
+      "message": "Smart India Hackathon (SIH) registration is now open! Don't miss this opportunity to showcase your innovation skills. <a href='https://forms.gle/TMJkXatkePhK7T6t6'>Register now</a> - Deadline approaching fast!",
       "icon": "fas fa-rocket",
       "timestamp": "2025-08-31T15:00:00Z",
       "isRead": false,

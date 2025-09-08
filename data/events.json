@@ -6,7 +6,7 @@
       "description": "The ultimate tech convergence where innovation meets excellence. A flagship event showcasing cutting-edge technology and engineering prowess.",
       "date": "2024-10-15",
       "featured": true,
-      "priority": 1,
+      "priority": 4,
       "icon": "fas fa-network-wired",
       "category": "Tech Fest",
       "status": "upcoming"
@@ -34,15 +34,15 @@
       "status": "completed"
     },
     {
-      "id": "sih-2024",
+      "id": "sih-2025",
       "title": "SIH",
       "description": "Smart India Hackathon - 36 hours of intensive coding and innovation to solve real-world problems and create impactful solutions.",
-      "date": "2024-12-05",
+      "date": "2025-10-09",
       "featured": true,
-      "priority": 4,
+      "priority": 1,
       "icon": "fas fa-code",
       "category": "Hackathon",
-      "status": "upcoming"
+      "status": "live"
     },
     {
       "id": "jashn-e-gantantra",

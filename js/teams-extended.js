@@ -4,9 +4,6 @@ class TeamsExtended {
         this.sections = ['batch-2023', 'batch-2022', 'batch-2021'];
         this.currentSection = 0;
         this.isScrolling = false;
-        this.quotes = [];
-        this.currentQuoteIndex = 0;
-        this.quoteInterval = null;
         this.init();
     }
 
@@ -15,7 +12,6 @@ class TeamsExtended {
         this.setupNavigation();
         this.setupScrollHandlers();
         this.loadTeamMembers();
-        this.loadQuotes();
         this.checkURLHash();
     }
 
@@ -113,175 +109,6 @@ class TeamsExtended {
         } catch (error) {
             console.error('Error loading team members:', error);
             this.showErrorMessage();
-        }
-    }
-
-    // Load quotes data
-    async loadQuotes() {
-        try {
-            const response = await fetch('./data/members.json');
-            const data = await response.json();
-            
-            if (data.teamMembers && data.teamMembers.quotes) {
-                this.quotes = data.teamMembers.quotes;
-                this.renderQuotes();
-                this.setupQuoteNavigation();
-                this.startAutoSlide();
-            }
-        } catch (error) {
-            console.error('Error loading quotes:', error);
-            this.showQuotesError();
-        }
-    }
-
-    // Render quotes carousel
-    renderQuotes() {
-        const carousel = document.getElementById('quotes-carousel');
-        const indicators = document.getElementById('quoteIndicators');
-        
-        if (!carousel || !indicators) return;
-
-        // Clear loading content
-        carousel.innerHTML = '';
-        indicators.innerHTML = '';
-
-        // Create quote cards
-        this.quotes.forEach((quote, index) => {
-            const quoteCard = this.createQuoteCard(quote, index);
-            carousel.appendChild(quoteCard);
-
-            // Create indicator
-            const indicator = document.createElement('div');
-            indicator.className = `quote-indicator ${index === 0 ? 'active' : ''}`;
-            indicator.setAttribute('data-quote-index', index);
-            indicators.appendChild(indicator);
-        });
-
-        // Show first quote
-        if (this.quotes.length > 0) {
-            this.showQuote(0);
-        }
-    }
-
-    // Create individual quote card
-    createQuoteCard(quote, index) {
-        const card = document.createElement('div');
-        card.className = `quote-card ${index === 0 ? 'active' : ''}`;
-        card.setAttribute('data-quote-index', index);
-
-        card.innerHTML = `
-            <div class="quote-background" style="background-image: url('${quote.image}')"></div>
-            <div class="quote-content">
-                <i class="fas fa-quote-right quote-icon"></i>
-                <p class="quote-text">${quote.text}</p>
-                <p class="quote-author">${quote.author}</p>
-            </div>
-        `;
-
-        return card;
-    }
-
-    // Setup quote navigation
-    setupQuoteNavigation() {
-        const prevBtn = document.getElementById('prevQuote');
-        const nextBtn = document.getElementById('nextQuote');
-        const indicators = document.querySelectorAll('.quote-indicator');
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                this.stopAutoSlide();
-                this.previousQuote();
-                this.startAutoSlide();
-            });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                this.stopAutoSlide();
-                this.nextQuote();
-                this.startAutoSlide();
-            });
-        }
-
-        // Indicator click handlers
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                this.stopAutoSlide();
-                this.showQuote(index);
-                this.startAutoSlide();
-            });
-        });
-    }
-
-    // Show specific quote
-    showQuote(index) {
-        if (index < 0 || index >= this.quotes.length) return;
-
-        // Hide all quotes
-        const allQuotes = document.querySelectorAll('.quote-card');
-        const allIndicators = document.querySelectorAll('.quote-indicator');
-
-        allQuotes.forEach(quote => {
-            quote.classList.remove('active');
-        });
-
-        allIndicators.forEach(indicator => {
-            indicator.classList.remove('active');
-        });
-
-        // Show selected quote
-        const selectedQuote = document.querySelector(`[data-quote-index="${index}"]`);
-        const selectedIndicator = document.querySelector(`.quote-indicator[data-quote-index="${index}"]`);
-
-        if (selectedQuote) {
-            selectedQuote.classList.add('active');
-        }
-
-        if (selectedIndicator) {
-            selectedIndicator.classList.add('active');
-        }
-
-        this.currentQuoteIndex = index;
-    }
-
-    // Next quote
-    nextQuote() {
-        const nextIndex = (this.currentQuoteIndex + 1) % this.quotes.length;
-        this.showQuote(nextIndex);
-    }
-
-    // Previous quote
-    previousQuote() {
-        const prevIndex = this.currentQuoteIndex === 0 ? this.quotes.length - 1 : this.currentQuoteIndex - 1;
-        this.showQuote(prevIndex);
-    }
-
-    // Start auto slide
-    startAutoSlide() {
-        this.stopAutoSlide(); // Clear any existing interval
-        this.quoteInterval = setInterval(() => {
-            this.nextQuote();
-        }, 5000); // Change quote every 5 seconds
-    }
-
-    // Stop auto slide
-    stopAutoSlide() {
-        if (this.quoteInterval) {
-            clearInterval(this.quoteInterval);
-            this.quoteInterval = null;
-        }
-    }
-
-    // Show quotes error
-    showQuotesError() {
-        const carousel = document.getElementById('quotes-carousel');
-        if (carousel) {
-            carousel.innerHTML = `
-                <div class="error-message">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <p>Error loading inspirational quotes. Please try again later.</p>
-                </div>
-            `;
         }
     }
 

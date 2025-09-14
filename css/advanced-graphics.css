@@ -560,11 +560,11 @@
 /* Hero Glass Advanced - Static */
 .hero-glass-advanced {
     background: linear-gradient(180deg, 
-        rgba(13, 34, 87, 0.95) 0%, 
-        rgba(17, 45, 102, 0.9) 25%, 
-        rgba(25, 55, 120, 0.85) 50%, 
-        rgba(30, 68, 135, 0.8) 75%,
-        rgba(37, 79, 148, 0.75) 100%
+        rgba(13, 34, 87, 0.4) 0%, 
+        rgba(17, 45, 102, 0.35) 25%, 
+        rgba(25, 55, 120, 0.3) 50%, 
+        rgba(30, 68, 135, 0.25) 75%,
+        rgba(37, 79, 148, 0.2) 100%
     );
     backdrop-filter: blur(20px);
     border: 1px solid rgba(59, 130, 246, 0.3);
@@ -693,6 +693,33 @@
         0 0 12px rgba(0, 123, 255, 0.05);
 }
 
+/* Force white text in hero box regardless of theme */
+.hero-glass-advanced *,
+.hero-glass-advanced .title-line-1 .welcome-text,
+.hero-glass-advanced .title-line-2 .main-title,
+.hero-glass-advanced .title-line-3 .subtitle-title,
+.hero-glass-advanced .title-line-4 .college-name-hero,
+.hero-glass-advanced .subtitle-main,
+.hero-glass-advanced .subtitle-secondary,
+.hero-glass-advanced .gradient-text-advanced {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Override theme variations for hero text */
+body.light-theme .hero-glass-advanced *,
+body.dark-theme .hero-glass-advanced *,
+body.light-theme .hero-glass-advanced .title-line-1 .welcome-text,
+body.light-theme .hero-glass-advanced .title-line-2 .main-title,
+body.light-theme .hero-glass-advanced .title-line-3 .subtitle-title,
+body.light-theme .hero-glass-advanced .title-line-4 .college-name-hero,
+body.light-theme .hero-glass-advanced .subtitle-main,
+body.light-theme .hero-glass-advanced .subtitle-secondary,
+body.light-theme .hero-glass-advanced .gradient-text-advanced {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
 /* Hero Buttons Advanced */
 .hero-buttons-advanced {
     display: flex;
@@ -709,7 +736,7 @@
     border: 2px solid #ffffff;
     border-radius: 50px;
     background: transparent;
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: 600;
     font-size: 17px;
     cursor: pointer;
@@ -725,6 +752,15 @@
     position: relative;
     z-index: 2;
     transition: color 0.4s ease;
+    color: #ffffff !important;
+}
+
+/* Force white text for hero buttons regardless of theme */
+body.light-theme .btn-explore-timeline,
+body.dark-theme .btn-explore-timeline,
+body.light-theme .btn-explore-timeline .btn-text,
+body.dark-theme .btn-explore-timeline .btn-text {
+    color: #ffffff !important;
 }
 
 /* Left-to-Right Waterfill Effect */

@@ -20,7 +20,7 @@
       "image": "assets/images/featured/engineers day.png",
       "isPlaceholder": false,
       "buttonText": "15th sep",
-      "buttonLink": "",
+      "buttonLink": "https://forms.gle/pxrSqDzvM4hRGrfi9",
       "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       "order": 2
     },
@@ -32,7 +32,7 @@
       "image": "assets/images/featured/recruitment.png",
       "isPlaceholder": false,
       "buttonText": "Apply Now",
-      "buttonLink": "",
+      "buttonLink": "https://forms.gle/pHVaeALj2XdmXtyU8",
       "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       "order": 3
     }

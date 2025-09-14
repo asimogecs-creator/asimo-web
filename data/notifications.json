@@ -12,9 +12,9 @@
     {
       "id": "batch-2024-recruitment",
       "title": "Calling Batch 2024 for Recruitment",
-      "message": "Attention Batch 2024 students! We are calling for new member recruitment to join our technical club. <a href='#teams' class='notification-link'>Apply here</a> and be part of our innovative journey!",
+      "message": "Attention Batch 2024 students! We are calling for new member recruitment to join our technical club. <a href='https://forms.gle/pHVaeALj2XdmXtyU8' class='notification-link'>Apply here</a> and be part of our innovative journey!",
       "icon": "fas fa-user-plus",
-      "timestamp": "2025-08-31T12:30:00Z",
+      "timestamp": "2025-09-14T18:30:00Z",
       "isRead": false,
       "type": "recruitment"
     },
@@ -35,25 +35,8 @@
       "timestamp": "2025-08-31T10:00:00Z",
       "isRead": false,
       "type": "workshop"
-    },
-    {
-      "id": "hackathon-results",
-      "title": "Hackathon Results Announced",
-      "message": "Congratulations to all participants! <a href='#gallery' class='notification-link'>Check out the winning projects</a> and prize distribution details.",
-      "icon": "fas fa-trophy",
-      "timestamp": "2025-08-30T14:30:00Z",
-      "isRead": false,
-      "type": "announcement"
-    },
-    {
-      "id": "team-applications",
-      "title": "New Team Member Applications",
-      "message": "Applications for new team members are now open. <a href='#teams' class='notification-link'>Join our technical club</a> and be part of innovation!",
-      "icon": "fas fa-users",
-      "timestamp": "2025-08-28T09:15:00Z",
-      "isRead": true,
-      "type": "recruitment"
     }
+    
   ],
-  "lastUpdated": "2025-08-31T15:30:00Z"
+  "lastUpdated": "2025-09-15T00:30:00Z"
 }

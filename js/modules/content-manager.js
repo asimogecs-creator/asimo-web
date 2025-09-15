@@ -11,6 +11,9 @@ class ContentManager {
             this.newFeaturedManager = window.newFeaturedManager;
         }
         this.initialized = false;
+        
+        // Make workshops manager globally accessible for modal functions
+        window.workshopsManagerInstance = this.workshopsManager;
     }
 
     async init() {

@@ -40,12 +40,63 @@ class WorkshopsManager {
             </div>
             <h3>${workshop.title}</h3>
             <p>${workshop.description}</p>
-            <button class="workshop-btn">Learn More</button>
+            <button class="workshop-btn" onclick="openWorkshopModal('${workshop.id}')">Learn More</button>
         `;
 
         return workshopDiv;
     }
+
+    getWorkshopById(id) {
+        if (!this.workshopsData) return null;
+        return this.workshopsData.workshops.find(workshop => workshop.id === id);
+    }
 }
+
+// Global functions for modal control
+function openWorkshopModal(workshopId) {
+    const workshopsManager = window.workshopsManagerInstance;
+    if (!workshopsManager) return;
+
+    const workshop = workshopsManager.getWorkshopById(workshopId);
+    if (!workshop) return;
+
+    // Update modal content
+    document.getElementById('workshopModalTitle').textContent = workshop.title;
+    document.getElementById('workshopModalIcon').className = workshop.icon;
+    document.getElementById('workshopModalDescription').textContent = workshop.description;
+
+    // Show modal
+    const modal = document.getElementById('workshopModal');
+    modal.classList.add('active');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+function closeWorkshopModal() {
+    const modal = document.getElementById('workshopModal');
+    modal.classList.remove('active');
+    
+    // Restore body scroll
+    document.body.style.overflow = '';
+}
+
+// Close modal when clicking overlay
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('workshopModal');
+    const overlay = modal?.querySelector('.workshop-modal-overlay');
+    
+    if (overlay) {
+        overlay.addEventListener('click', closeWorkshopModal);
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal?.classList.contains('active')) {
+            closeWorkshopModal();
+        }
+    });
+});
 
 // Export for use in other files
 window.WorkshopsManager = WorkshopsManager;

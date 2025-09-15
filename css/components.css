@@ -1620,3 +1620,171 @@ body.light-theme #workshopModalDescription {
         height: 25px;
     }
 }
+
+/* Team Group Photo Styles */
+.team-group-photo {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(37, 99, 235, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.team-group-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.group-photo-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    aspect-ratio: 16/10;
+}
+
+.team-group-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 15px;
+}
+
+.team-group-photo:hover .team-group-image {
+    transform: scale(1.05);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    padding: 40px 25px 25px;
+    transform: translateY(60%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-group-photo:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-caption {
+    text-align: center;
+    color: white;
+}
+
+.photo-caption h3 {
+    font-family: 'Pattanakarn', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.photo-caption p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Image loading state */
+.team-group-image {
+    background: linear-gradient(45deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(37, 99, 235, 0.05) 100%);
+}
+
+/* Fallback for missing image */
+.team-group-image:not([src]),
+.team-group-image[src=""] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.team-group-image:not([src])::before,
+.team-group-image[src=""]::before {
+    content: "📷\ATeam Photo\AComing Soon";
+    white-space: pre;
+    line-height: 1.6;
+}
+
+/* Theme variations for team group photo */
+body.light-theme .team-group-photo {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(248, 250, 252, 0.8) 100%);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+body.light-theme .team-group-photo:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive design for team group photo */
+@media (max-width: 768px) {
+    .group-photo-container {
+        aspect-ratio: 4/3;
+    }
+    
+    .photo-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .photo-caption p {
+        font-size: 1rem;
+    }
+    
+    .photo-overlay {
+        padding: 30px 20px 20px;
+        transform: translateY(50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-group-photo {
+        padding: 15px;
+    }
+    
+    .group-photo-container {
+        aspect-ratio: 1/1;
+    }
+    
+    .photo-caption h3 {
+        font-size: 1.3rem;
+    }
+    
+    .photo-caption p {
+        font-size: 0.95rem;
+    }
+    
+    .photo-overlay {
+        padding: 25px 15px 15px;
+        transform: translateY(40%);
+    }
+}

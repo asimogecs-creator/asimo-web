@@ -96,11 +96,7 @@ class ContentManager {
             this.teamsManager.renderBatches(batchesContainer);
         }
 
-        // Render quotes
-        const quotesContainer = document.querySelector('.quotes-stack');
-        if (quotesContainer) {
-            this.teamsManager.renderQuotes(quotesContainer);
-        }
+        // Note: Quotes section removed and replaced with team group photo
 
         // Render gallery with validation
         const galleryContainer = document.querySelector('.gallery-grid');

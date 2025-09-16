@@ -1,49 +1,7 @@
 {
   "teamMembers": {
-    "quotes": [
-      {
-        "id": 1,
-        "text": "The way to get started is to quit talking and begin doing.",
-        "author": "Walt Disney",
-        "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        "category": "motivation"
-      },
-      {
-        "id": 2,
-        "text": "Innovation distinguishes between a leader and a follower.",
-        "author": "Steve Jobs",
-        "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        "category": "innovation"
-      },
-      {
-        "id": 3,
-        "text": "The future belongs to those who believe in the beauty of their dreams.",
-        "author": "Eleanor Roosevelt",
-        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        "category": "dreams"
-      },
-      {
-        "id": 4,
-        "text": "Technology is a useful servant but a dangerous master.",
-        "author": "Christian Lous Lange",
-        "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        "category": "technology"
-      },
-      {
-        "id": 5,
-        "text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-        "author": "Winston Churchill",
-        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        "category": "success"
-      },
-      {
-        "id": 6,
-        "text": "The only way to do great work is to love what you do.",
-        "author": "Steve Jobs",
-        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        "category": "passion"
-      }
-    ],
+    
+    
     "batches": [
       {
         "year": "2023",

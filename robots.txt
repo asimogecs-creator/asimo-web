@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://udaykumr.github.io/asimo-website/sitemap.xml
+
+# Important pages
+Allow: /index.html
+Allow: /notifications.html
+Allow: /events.html
+Allow: /teams.html
+Allow: /gallery.html
+
+# Assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/

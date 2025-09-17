@@ -110,6 +110,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
                 
+                // Initialize about section manager
+                if (typeof window.AboutManager !== 'undefined') {
+                    const aboutManager = new window.AboutManager();
+                    aboutManager.init().catch(error => {
+                        console.error('Failed to load about section:', error);
+                    });
+                }
+                
                 // Refresh AOS after dynamic content is loaded
                 setTimeout(() => {
                     AOS.refresh();

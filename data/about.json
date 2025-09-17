@@ -1,0 +1,33 @@
+{
+    "sectionTitle": "About ASIMO Technical Club",
+    "sectionSubtitle": "Government Engineering College Samastipur's Premier Technical Club",
+    "description": {
+        "paragraph1": "<strong>ASIMO Technical Club</strong> is the flagship technical organization at <strong>Government Engineering College Samastipur (GEC Samastipur)</strong>, also known as <strong>GECS</strong>. Located in <strong>Samastipur, Bihar</strong>, our <strong>engineering college</strong> stands as a beacon of <strong>technical</strong> excellence and innovation in the region.",
+        "paragraph2": "As the leading <strong>technical club</strong> at <strong>GEC</strong>, we foster technological advancement and engineering innovation among students of <strong>Government Engineering College Samastipur</strong>. Our mission is to bridge the gap between theoretical knowledge and practical application in the field of engineering and technology.",
+        "paragraph3": "<strong>ASIMO</strong> stands for \"Advance Step in MultiTech Orientation,\" representing our commitment to multidisciplinary <strong>technical</strong> education. We serve the entire <strong>GEC Samastipur</strong> community, organizing workshops, seminars, and <strong>technical</strong> events that enhance the engineering skills of students at our <strong>Government Engineering College</strong>."
+    },
+    "highlights": [
+        {
+            "icon": "fas fa-university",
+            "text": "<strong>Government Engineering College Samastipur (GECS)</strong>"
+        },
+        {
+            "icon": "fas fa-map-marker-alt",
+            "text": "<strong>Samastipur, Bihar, India</strong>"
+        },
+        {
+            "icon": "fas fa-cogs",
+            "text": "<strong>Premier Technical Club</strong>"
+        },
+        {
+            "icon": "fas fa-graduation-cap",
+            "text": "<strong>Engineering Excellence</strong>"
+        }
+    ],
+    "image": {
+        "src": "assets/images/tech-event.jpg",
+        "alt": "ASIMO Technical Club at Government Engineering College Samastipur - GEC GECS Engineering Students",
+        "overlayTitle": "GEC Samastipur Technical Excellence",
+        "overlayDescription": "Engineering Innovation at Government Engineering College Samastipur"
+    }
+}
